@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand CSS variables — kept for any non-Tailwind cases (e.g. inline styles, custom utilities below). */
+:root {
+  --color-primary: #0C1926;
+  --color-secondary: #162A3E;
+  --color-surface: #1E3348;
+  --color-accent: #3B82F6;
+  --color-accent-teal: #14B8A6;
+  --color-border: rgba(59, 130, 246, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hero radial gradient — Tailwind v3 doesn't ship radial-gradient utilities. */
+.hero-glow {
+  position: relative;
+  overflow: hidden;
+}
+.hero-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/*
+  Hero stats card — three breakpoints, three different layouts:
+    < 768px     : 1 column, dividers between are bottom borders
+    768–1023px : 3 columns horizontal, dividers between are right borders
+    >= 1024px  : 1 column (alongside hero content), dividers are bottom borders
+*/
+.hero-stat {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.hero-stat:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.hero-stat:first-child {
+  padding-top: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .hero-stat {
+    border-bottom: none;
+    border-right: 1px solid var(--color-border);
+    padding: 0 1rem;
+  }
+  .hero-stat:last-child {
+    border-right: none;
+  }
+  .hero-stat:first-child {
+    padding-top: 0;
+    padding-left: 0;
+  }
+}

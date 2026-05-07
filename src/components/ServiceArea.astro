@@ -1,0 +1,31 @@
+---
+const states = [
+  'Colorado', 'Minnesota', 'Wisconsin', 'Illinois', 'Kansas',
+  'Missouri', 'Texas', 'Wyoming', 'South Dakota', 'North Dakota',
+  'Tennessee', 'Ohio', 'Indiana', 'Montana', 'Michigan',
+];
+---
+
+<section id="coverage" class="px-5 md:px-8 py-24 bg-secondary border-t border-b border-accent/15">
+  <div class="max-w-page mx-auto text-center">
+    <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">Service Area</div>
+    <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] text-white mb-4 mx-auto max-w-[600px]">
+      15 states and growing.
+    </h2>
+    <p class="text-slate-400 text-[1.05rem] mx-auto max-w-[550px] mb-10 leading-[1.7]">
+      We handle claims across the Midwest, Mountain West, South, and beyond.
+    </p>
+
+    <div class="flex flex-wrap gap-3 justify-center mt-10 max-w-[700px] mx-auto">
+      {states.map((s) => (
+        <span class="bg-surface border border-accent/15 px-5 py-2 rounded-md text-[0.9rem] font-semibold text-slate-100">
+          {s}
+        </span>
+      ))}
+    </div>
+
+    <p class="text-slate-400 text-[0.9rem] mt-8 italic">
+      Don't see your state? We're expanding. Reach out and let's talk.
+    </p>
+  </div>
+</section>

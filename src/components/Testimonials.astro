@@ -1,0 +1,41 @@
+---
+const quotes = [
+  {
+    body: "We were leaving thousands on every claim and didn't even know it. Dave found line items our own team missed on the first file we sent over.",
+    author: 'Roofing Contractor, Colorado',
+  },
+  {
+    body: 'The white label setup is what sold us. Our adjusters think Dave is on our payroll. The carrier communication is seamless.',
+    author: 'Restoration Company, Minnesota',
+  },
+  {
+    body: 'We went from doing supplements ourselves and hating every minute to just sending files to Precision and getting paid. Should have done this years ago.',
+    author: 'General Contractor, Texas',
+  },
+];
+---
+
+<section id="testimonials" class="px-5 md:px-8 py-24 bg-secondary border-t border-b border-accent/15">
+  <div class="max-w-page mx-auto text-center">
+    <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">What Contractors Say</div>
+    <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] text-white mx-auto max-w-[700px] mb-4">
+      Results speak louder than promises.
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+      {quotes.map((q) => (
+        <article class="bg-primary border border-accent/15 rounded-xl p-8 text-left">
+          <div class="text-amber-500 text-[0.9rem] mb-4 tracking-[0.1em]">★★★★★</div>
+          <blockquote class="text-slate-100 text-[0.95rem] leading-[1.65] mb-5 italic">
+            &ldquo;{q.body}&rdquo;
+          </blockquote>
+          <div class="text-slate-400 text-[0.8rem] font-semibold">— {q.author}</div>
+        </article>
+      ))}
+    </div>
+
+    <p class="text-slate-400 text-[0.8rem] mt-6 italic">
+      Placeholder testimonials. We'll replace these with real quotes from Dave's clients.
+    </p>
+  </div>
+</section>

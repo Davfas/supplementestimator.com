@@ -1,0 +1,33 @@
+---
+const steps = [
+  { n: '01', title: 'Onboarding Call', body: 'Quick Zoom call. We learn your workflow, your CRM, your preferences. We set up access and hit the ground running.' },
+  { n: '02', title: 'Send Your Files', body: 'Email them, assign them in your CRM, or we pull them ourselves. Scope of loss, photos, measurements, notes.' },
+  { n: '03', title: 'We Build It', body: 'Detailed Xactimate estimate or supplement with every missing line item, code upgrade, and pricing correction documented.' },
+  { n: '04', title: 'Carrier Negotiation', body: "We submit to the carrier, handle their questions, push back on denials, and follow up until it's resolved." },
+  { n: '05', title: 'You Get Paid', body: 'Supplement approved, final invoice submitted, payment released. We hand you the updated paperwork and you move on.' },
+];
+---
+
+<section id="process" class="px-5 md:px-8 py-24 bg-secondary border-t border-b border-accent/15">
+  <div class="max-w-page mx-auto">
+    <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">How It Works</div>
+    <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] text-white mb-4 max-w-[600px]">
+      Five steps. You stay on the roof.
+    </h2>
+    <p class="text-slate-400 text-[1.05rem] max-w-[550px] mb-14 leading-[1.7]">
+      We built our process to take work off your plate, not add to it.
+    </p>
+
+    <ol class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-6 list-none p-0 m-0">
+      {steps.map((s) => (
+        <li class="flex flex-row lg:flex-col items-start gap-4 lg:gap-0 text-left lg:text-center py-4 lg:py-8 lg:px-4">
+          <div class="font-heading text-[2rem] lg:text-5xl font-extrabold text-accent/15 leading-none lg:mb-4 min-w-[40px] lg:min-w-0">{s.n}</div>
+          <div>
+            <h4 class="font-heading text-base lg:text-base font-bold text-white mb-2">{s.title}</h4>
+            <p class="text-slate-400 text-[0.85rem] leading-[1.6]">{s.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

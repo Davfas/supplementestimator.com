@@ -1,0 +1,50 @@
+---
+const creds = [
+  '10+ years in insurance supplementing',
+  '7,000+ claims handled',
+  'Xactimate Certified',
+  'Former Licensed Insurance Adjuster',
+  '15 states covered',
+];
+---
+
+<section id="about" class="px-5 md:px-8 py-24 max-w-page mx-auto">
+  <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">Who We Are</div>
+  <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] text-white mb-4 max-w-[600px]">
+    Built by people who've been on both sides of the claim.
+  </h2>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-16 items-start mt-12">
+    <!-- Card -->
+    <aside class="bg-secondary border border-accent/15 rounded-2xl p-10 text-center">
+      <div class="w-[100px] h-[100px] bg-surface rounded-full mx-auto mb-6 flex items-center justify-center font-heading text-[2rem] font-bold text-accent">
+        DF
+      </div>
+      <h3 class="font-heading text-[1.3rem] font-bold text-white mb-1">Dave Faso</h3>
+      <div class="text-accent-teal text-[0.85rem] font-semibold uppercase tracking-[0.06em] mb-6">Founder</div>
+      <ul class="flex flex-col gap-2 text-left list-none p-0 m-0">
+        {creds.map((c, i) => (
+          <li class={`text-slate-400 text-[0.85rem] py-2 ${i !== creds.length - 1 ? 'border-b border-accent/15' : ''}`}>
+            {c}
+          </li>
+        ))}
+      </ul>
+    </aside>
+
+    <!-- Text -->
+    <div>
+      <h3 class="font-heading text-[1.5rem] md:text-[1.75rem] font-bold text-white tracking-[-0.02em] mb-6 leading-[1.3]">
+        Dave spent years as a licensed insurance adjuster before crossing over to the contractor side. He's written estimates for carriers, reviewed supplements from the desk, and negotiated claim values from both ends of the phone call.
+      </h3>
+      <p class="text-slate-400 text-[1.05rem] leading-[1.7] mb-5">
+        That background means he doesn't guess what adjusters want to see. He knows. He writes supplements in the format and language that carriers are trained to accept, because he used to be the one accepting them.
+      </p>
+      <p class="text-slate-400 text-[1.05rem] leading-[1.7] mb-5">
+        After handling over 7,000 claims across 15 states, Dave built Precision Estimating and Supplements to give contractors something they rarely get: a supplement department that actually knows the insurance side of the business.
+      </p>
+      <p class="text-slate-400 text-[1.05rem] leading-[1.7]">
+        The team at Precision works as an extension of your operation. No learning curve for your crew, no awkward handoffs with the carrier. We slot in, we do the work, and you collect what you're owed.
+      </p>
+    </div>
+  </div>
+</section>

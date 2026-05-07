@@ -1,0 +1,55 @@
+---
+const features = [
+  'We work inside your CRM (JobNimbus, AccuLynx, CompanyCam, or whatever you use)',
+  'Carrier communication comes from your company email',
+  'Your branding on every document',
+  'Your clients never know we exist',
+];
+---
+
+<section id="whitelabel" class="px-5 md:px-8 py-24 max-w-page mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <!-- Content -->
+    <div>
+      <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">The Difference</div>
+      <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold text-white tracking-[-0.02em] mb-6 leading-[1.15]">
+        We don't just work for you. We work as you.
+      </h2>
+      <p class="text-slate-400 text-[1.05rem] leading-[1.7] mb-6">
+        Most supplement companies send you back a PDF and wish you luck. We embed in your operation. We use your CRM. We email carriers from your domain. We show up as your team member. The carrier sees your company, not ours.
+      </p>
+      <p class="text-slate-400 text-[1.05rem] leading-[1.7] mb-6">
+        That means faster approvals, smoother communication, and zero confusion about who's handling the claim.
+      </p>
+      <ul class="flex flex-col gap-4 mt-8 list-none p-0 m-0">
+        {features.map((f) => (
+          <li class="flex items-start gap-3 text-slate-100 text-[0.95rem]">
+            <span class="text-accent-teal font-bold text-[1.1rem] leading-[1.5] flex-shrink-0">✓</span>
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Visual flow -->
+    <div class="bg-secondary border border-accent/15 rounded-2xl p-8 md:p-12 text-center">
+      <div class="text-xs uppercase tracking-[0.1em] text-slate-400 mb-6 font-semibold">How carriers see it</div>
+      <div class="flex flex-col gap-4 items-center">
+        <div class="bg-surface border border-accent/15 px-8 py-4 rounded-lg text-slate-100 text-[0.9rem] font-medium w-full max-w-[280px]">
+          Your Contractor Company
+        </div>
+        <div class="text-accent text-xl">↓</div>
+        <div class="bg-accent/[0.08] border border-accent px-8 py-4 rounded-lg text-slate-100 text-[0.9rem] font-medium w-full max-w-[280px]">
+          Precision Estimating (invisible)
+        </div>
+        <div class="text-accent text-xl">↓</div>
+        <div class="bg-surface border border-accent/15 px-8 py-4 rounded-lg text-slate-100 text-[0.9rem] font-medium w-full max-w-[280px]">
+          Insurance Carrier
+        </div>
+      </div>
+      <p class="mt-6 text-slate-400 text-[0.85rem]">
+        The carrier only sees your name. We're your back office.
+      </p>
+    </div>
+  </div>
+</section>

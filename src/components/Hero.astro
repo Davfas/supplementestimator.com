@@ -1,0 +1,48 @@
+---
+const stats = [
+  { number: '7,000+', label: 'Claims Handled' },
+  { number: '10+', label: 'Years Experience' },
+  { number: '15', label: 'States Covered' },
+];
+---
+
+<section class="hero-glow min-h-screen flex items-center px-5 md:px-8 pt-32 pb-12 md:pt-32 md:pb-16">
+  <div class="max-w-page mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <!-- Content -->
+    <div class="relative z-10">
+      <span class="inline-block text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-6 px-4 py-1.5 border border-accent-teal/30 rounded-full">
+        Xactimate Certified &bull; 15+ States
+      </span>
+      <h1 class="font-heading text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-white mb-6">
+        Your contractors <span class="text-accent">get paid.</span> We make sure of it.
+      </h1>
+      <p class="text-base md:text-[1.15rem] text-slate-400 max-w-[520px] mb-10 leading-[1.7]">
+        Precision Estimating and Supplements writes estimates, builds supplements, and negotiates with carriers. We embed in your operation and work as your supplement department. The carrier never knows the difference.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="#contact"
+          class="inline-block bg-accent hover:bg-blue-600 text-white px-8 py-3.5 rounded-md font-semibold text-[0.95rem] transition-[background,transform] hover:-translate-y-px no-underline"
+        >
+          Schedule a Call
+        </a>
+        <a
+          href="#services"
+          class="inline-block bg-transparent text-slate-100 px-8 py-3.5 rounded-md font-semibold text-[0.95rem] border border-accent/15 hover:border-accent transition-[border-color,transform] hover:-translate-y-px no-underline"
+        >
+          See Our Services
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats card -->
+    <div class="bg-secondary border border-accent/15 rounded-2xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-0 md:max-w-[500px] md:mx-auto lg:max-w-none lg:mx-0">
+      {stats.map((s) => (
+        <div class="hero-stat">
+          <div class="font-heading text-5xl font-extrabold text-accent leading-none mb-2">{s.number}</div>
+          <div class="text-[0.85rem] text-slate-400 font-medium uppercase tracking-[0.06em]">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
