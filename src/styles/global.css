@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Brand CSS variables — kept for any non-Tailwind cases (e.g. inline styles, custom utilities below). */
 :root {
