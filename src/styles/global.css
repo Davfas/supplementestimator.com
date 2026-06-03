@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #0C1926;
+  --color-secondary: #162A3E;
+  --color-surface: #1E3348;
+  --color-accent: #3B82F6;
+  --color-accent-teal: #14B8A6;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --max-width-page: 1200px;
+}
+
 /* Brand CSS variables — kept for any non-Tailwind cases (e.g. inline styles, custom utilities below). */
 :root {
   --color-primary: #0C1926;
