@@ -1,12 +1,39 @@
 ---
 const steps = [
-  { n: '01', title: 'Onboarding Call', body: 'Quick Zoom call. We learn your workflow, your CRM, your preferences. We set up access and hit the ground running.' },
-  { n: '02', title: 'Send Your Files', body: 'Email them, assign them in your CRM, or we pull them ourselves. Scope of loss, photos, measurements, notes.' },
-  { n: '03', title: 'We Build It', body: 'Detailed Xactimate estimate or supplement with every missing line item, code upgrade, and pricing correction documented.' },
-  { n: '04', title: 'Carrier Negotiation', body: "We submit to the carrier, handle their questions, push back on denials, and follow up until it's resolved." },
-  { n: '05', title: 'You Get Paid', body: 'Supplement approved, final invoice submitted, payment released. We hand you the updated paperwork and you move on.' },
+  {
+    n: '01',
+    icon: 'ti-video',
+    title: 'Onboarding Call',
+    body: 'Quick Zoom call. We learn your workflow, your CRM, your preferences. We set up access and hit the ground running.',
+  },
+  {
+    n: '02',
+    icon: 'ti-file-upload',
+    title: 'Send Your Files',
+    body: 'Email them, assign them in your CRM, or we pull them ourselves. Scope of loss, photos, measurements, notes.',
+  },
+  {
+    n: '03',
+    icon: 'ti-tool',
+    title: 'We Build It',
+    body: 'Detailed Xactimate estimate or supplement with every missing line item, code upgrade, and pricing correction documented.',
+  },
+  {
+    n: '04',
+    icon: 'ti-messages',
+    title: 'Carrier Negotiation',
+    body: "We submit to the carrier, handle their questions, push back on denials, and follow up until it's resolved.",
+  },
+  {
+    n: '05',
+    icon: 'ti-cash',
+    title: 'You Get Paid',
+    body: 'Supplement approved, final invoice submitted, payment released. We hand you the updated paperwork and you move on.',
+  },
 ];
 ---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
 <section id="process" class="px-5 md:px-8 py-24 bg-secondary border-t border-b border-accent/15">
   <div class="max-w-page mx-auto">
@@ -18,12 +45,23 @@ const steps = [
       We built our process to take work off your plate, not add to it.
     </p>
 
-    <ol class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-6 list-none p-0 m-0">
-      {steps.map((s) => (
-        <li class="flex flex-row lg:flex-col items-start gap-4 lg:gap-0 text-left lg:text-center py-4 lg:py-8 lg:px-4">
-          <div class="font-heading text-[2rem] lg:text-5xl font-extrabold text-accent/15 leading-none lg:mb-4 min-w-[40px] lg:min-w-0">{s.n}</div>
+    <ol class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4 list-none p-0 m-0">
+      {steps.map((s, i) => (
+        <li class="relative flex flex-row lg:flex-col items-start lg:items-center gap-4 lg:gap-0 text-left lg:text-center py-4 lg:py-0">
+
+          {/* Connector line between steps (desktop only) */}
+          {i < steps.length - 1 && (
+            <div class="hidden lg:block absolute top-[28px] left-[calc(50%+28px)] right-[calc(-50%+28px)] h-px bg-accent/20 z-0"></div>
+          )}
+
+          {/* Icon circle */}
+          <div class="relative z-10 w-14 h-14 rounded-full bg-primary border-2 border-accent/30 flex items-center justify-center mb-0 lg:mb-5 shrink-0 lg:shrink">
+            <i class={`ti ${s.icon}`} style="font-size: 1.3rem; color: #3B82F6;" aria-hidden="true"></i>
+          </div>
+
           <div>
-            <h4 class="font-heading text-base lg:text-base font-bold text-white mb-2">{s.title}</h4>
+            <div class="font-heading text-[0.7rem] font-bold text-accent/50 uppercase tracking-[0.12em] mb-1">{s.n}</div>
+            <h4 class="font-heading text-base font-bold text-white mb-2">{s.title}</h4>
             <p class="text-slate-400 text-[0.85rem] leading-[1.6]">{s.body}</p>
           </div>
         </li>
