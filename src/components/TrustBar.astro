@@ -1,20 +1,22 @@
 ---
 const items = [
-  'Xactimate Certified',
-  'Former Licensed Adjuster',
-  'White Label Service',
-  'Roofing, GC & Restoration',
+  { icon: 'ti-certificate', label: 'Xactimate Certified' },
+  { icon: 'ti-shield-check', label: 'Former Licensed Adjuster' },
+  { icon: 'ti-eye-off', label: 'White Label Service' },
+  { icon: 'ti-home-2', label: 'Roofing, GC & Restoration' },
 ];
 ---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
 <section class="px-5 md:px-8 py-12 border-t border-b border-accent/15">
   <div class="max-w-page mx-auto flex justify-center gap-6 md:gap-12 flex-wrap">
     {items.map((item) => (
-      <div class="flex items-center gap-3 text-slate-400 text-[0.9rem] font-medium">
-        <div class="w-9 h-9 bg-surface rounded-lg flex items-center justify-center text-accent-teal text-base">
-          ✓
+      <div class="flex items-center gap-3 text-slate-300 text-[0.9rem] font-medium">
+        <div class="w-9 h-9 bg-surface border border-accent/20 rounded-lg flex items-center justify-center">
+          <i class={`ti ${item.icon}`} style="font-size: 1.1rem; color: #14B8A6;" aria-hidden="true"></i>
         </div>
-        {item}
+        {item.label}
       </div>
     ))}
   </div>
