@@ -1,93 +1,83 @@
 ---
-const links = [
-  { href: '#services', label: 'Services' },
-  { href: '#process', label: 'Process' },
-  { href: '#about', label: 'About' },
-];
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 px-5 md:px-8 py-4 flex items-center justify-between bg-primary/90 backdrop-blur-md border-b border-accent/15">
-  <a href="/" class="flex items-center gap-3 no-underline">
+<section class="hero-glow min-h-screen flex items-center px-5 md:px-8 pt-32 pb-20 relative overflow-hidden">
+
+  <!-- Logo watermark centered behind everything -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
     <img
       src="/precision-logo.png"
-      alt="Precision Estimating and Supplements"
-      class="h-14 w-auto"
-          style="min-width: 120px;"
+      alt=""
+      aria-hidden="true"
+      class="w-[1000px] max-w-[85vw] opacity-[0.40]"
     />
-  </a>
+  </div>
 
-  <ul class="hidden md:flex gap-8 items-center list-none m-0 p-0">
-    {links.map((l) => (
-      <li>
-        <a href={l.href} class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
-          {l.label}
+  <div class="max-w-page mx-auto w-full relative z-10 flex flex-col gap-16">
+
+    <!-- Top: Headline + subtext + buttons -->
+    <div class="max-w-[720px]">
+      <h1 class="font-heading text-[2.2rem] md:text-[3rem] lg:text-[3.8rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-white mb-6">
+        Professional Estimate Writing <span class="text-accent">&amp; Supplement Services</span>
+      </h1>
+      <p class="text-base md:text-[1.2rem] text-slate-400 mb-10 leading-[1.7]">
+        Precision Claims Support for Restoration Professionals
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="#contact"
+          class="inline-block bg-accent hover:bg-blue-600 text-white px-8 py-3.5 rounded-md font-semibold text-[0.95rem] transition-[background,transform] hover:-translate-y-px no-underline"
+        >
+          Schedule a Call
         </a>
-      </li>
-    ))}
-    <li>
-      <a
-        href="#contact"
-        class="bg-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-colors no-underline"
-      >
-        Get Started
-      </a>
-    </li>
-  </ul>
-
-  <button
-    id="mobile-menu-btn"
-    type="button"
-    class="md:hidden bg-transparent border-0 text-white text-2xl cursor-pointer p-1 leading-none"
-    aria-label="Toggle navigation menu"
-    aria-expanded="false"
-    aria-controls="mobile-menu"
-  >
-    <span id="mobile-menu-icon" aria-hidden="true">☰</span>
-  </button>
-</nav>
-
-<!-- Mobile menu panel -->
-<div
-  id="mobile-menu"
-  class="hidden md:hidden fixed top-[68px] left-0 right-0 z-40 bg-primary/95 backdrop-blur-md border-b border-accent/15"
->
-  <ul class="flex flex-col gap-1 p-6 m-0 list-none">
-    {links.map((l) => (
-      <li>
-        <a href={l.href} class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
-          {l.label}
+        <a
+          href="#services"
+          class="inline-block bg-transparent text-slate-100 px-8 py-3.5 rounded-md font-semibold text-[0.95rem] border border-accent/15 hover:border-accent transition-[border-color,transform] hover:-translate-y-px no-underline"
+        >
+          See Our Services
         </a>
-      </li>
-    ))}
-    <li>
-      <a
-        href="#contact"
-        class="block mt-2 bg-accent hover:bg-blue-600 text-white px-6 py-3 rounded-md font-semibold text-center transition-colors no-underline"
-      >
-        Get Started
-      </a>
-    </li>
-  </ul>
-</div>
+      </div>
+    </div>
 
-<script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const icon = document.getElementById('mobile-menu-icon');
+    <!-- Bottom: XM8 estimate card, offset right -->
+    <div class="w-full max-w-[640px] self-end bg-secondary border border-accent/15 rounded-2xl overflow-hidden shadow-2xl">
 
-  function setOpen(open: boolean) {
-    if (!btn || !menu || !icon) return;
-    menu.classList.toggle('hidden', !open);
-    btn.setAttribute('aria-expanded', String(open));
-    icon.textContent = open ? '✕' : '☰';
-  }
+      <!-- Document toolbar -->
+      <div class="bg-[#0d1f30] px-4 py-3 flex items-center justify-between border-b border-accent/10">
+        <div class="flex items-center gap-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span class="text-[0.72rem] text-slate-400 font-medium">Xactimate Estimate — Dwelling / Roof</span>
+        </div>
+        <span class="text-[0.68rem] text-accent-teal bg-accent-teal/10 border border-accent-teal/20 px-2.5 py-1 rounded-full font-semibold">Supplement Filed</span>
+      </div>
 
-  btn?.addEventListener('click', () => {
-    const isHidden = menu?.classList.contains('hidden') ?? true;
-    setOpen(isHidden);
-  });
+      <!-- Screenshot with fade -->
+      <div class="relative overflow-hidden" style="max-height: 260px;">
+        <img
+          src="/xm8_preview.jpg"
+          alt="Real Xactimate estimate showing line items including ice and water barrier, roofing felt, metal roofing, and supplemented items"
+          class="w-full object-top object-cover"
+          style="filter: brightness(0.97);"
+        />
+        <div class="absolute bottom-0 left-0 right-0 h-24"
+          style="background: linear-gradient(to bottom, transparent, #162A3E);">
+        </div>
+      </div>
 
-  menu?.querySelectorAll('a').forEach((a) => {
-    a.addEventListener('click', () => setOpen(false));
-  });
-</script>
+      <!-- Before / After totals -->
+      <div class="grid grid-cols-2 border-t border-accent/10">
+        <div class="px-6 py-5 border-r border-accent/10">
+          <div class="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-slate-500 mb-1.5">Carrier original</div>
+          <div class="font-heading text-[1.6rem] font-bold text-red-400 leading-none mb-1">$18,732</div>
+          <div class="text-[0.72rem] text-slate-500">Before supplement</div>
+        </div>
+        <div class="px-6 py-5 bg-accent-teal/[0.04]">
+          <div class="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-accent-teal mb-1.5">After supplement</div>
+          <div class="font-heading text-[1.6rem] font-bold text-accent-teal leading-none mb-1">$24,752</div>
+          <div class="text-[0.72rem] text-accent-teal/70 font-semibold">+$6,019 recovered</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
