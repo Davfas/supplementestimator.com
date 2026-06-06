@@ -9,75 +9,77 @@
       src="/precision-logo.png"
       alt=""
       aria-hidden="true"
-      class="w-[1000px] max-w-[85vw] opacity-[0.40]"
+      class="w-[800px] max-w-[80vw] opacity-[0.08]"
     />
   </div>
 
-  <div class="max-w-page mx-auto w-full relative z-10 flex flex-col gap-16">
+  <div class="max-w-page mx-auto w-full relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-20 items-center">
 
-    <!-- Top: Headline + subtext + buttons -->
-    <div class="max-w-[720px]">
-      <h1 class="font-heading text-[2.2rem] md:text-[3rem] lg:text-[3.8rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-white mb-6">
-        Professional Estimate Writing <span class="text-accent">&amp; Supplement Services</span>
-      </h1>
-      <p class="text-base md:text-[1.2rem] text-slate-400 mb-10 leading-[1.7]">
-        Precision Claims Support for Restoration Professionals
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a
-          href="#contact"
-          class="inline-block bg-accent hover:bg-blue-600 text-white px-8 py-3.5 rounded-md font-semibold text-[0.95rem] transition-[background,transform] hover:-translate-y-px no-underline"
-        >
-          Schedule a Call
-        </a>
-        <a
-          href="#services"
-          class="inline-block bg-transparent text-slate-100 px-8 py-3.5 rounded-md font-semibold text-[0.95rem] border border-accent/15 hover:border-accent transition-[border-color,transform] hover:-translate-y-px no-underline"
-        >
-          See Our Services
-        </a>
-      </div>
-    </div>
-
-    <!-- Bottom: XM8 estimate card, offset right -->
-    <div class="w-full max-w-[640px] self-end bg-secondary border border-accent/15 rounded-2xl overflow-hidden shadow-2xl">
-
-      <!-- Document toolbar -->
-      <div class="bg-[#0d1f30] px-4 py-3 flex items-center justify-between border-b border-accent/10">
-        <div class="flex items-center gap-3">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          <span class="text-[0.72rem] text-slate-400 font-medium">Xactimate Estimate — Dwelling / Roof</span>
-        </div>
-        <span class="text-[0.68rem] text-accent-teal bg-accent-teal/10 border border-accent-teal/20 px-2.5 py-1 rounded-full font-semibold">Supplement Filed</span>
-      </div>
-
-      <!-- Screenshot with fade -->
-      <div class="relative overflow-hidden" style="max-height: 260px;">
-        <img
-          src="/xm8_preview.jpg"
-          alt="Real Xactimate estimate showing line items including ice and water barrier, roofing felt, metal roofing, and supplemented items"
-          class="w-full object-top object-cover"
-          style="filter: brightness(0.97);"
-        />
-        <div class="absolute bottom-0 left-0 right-0 h-24"
-          style="background: linear-gradient(to bottom, transparent, #162A3E);">
+      <!-- Left: Headline + subtext + buttons -->
+      <div>
+        <h1 class="font-heading text-[2.4rem] md:text-[3rem] lg:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-white mb-6">
+          Professional Estimate Writing <span class="text-accent">&amp; Supplement Services</span>
+        </h1>
+        <p class="text-base md:text-[1.2rem] text-slate-400 mb-10 leading-[1.7] max-w-[480px]">
+          Precision Claims Support for Restoration Professionals
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="#contact"
+            class="inline-block bg-accent hover:bg-blue-600 text-white px-8 py-3.5 rounded-md font-semibold text-[0.95rem] transition-[background,transform] hover:-translate-y-px no-underline"
+          >
+            Schedule a Call
+          </a>
+          <a
+            href="#services"
+            class="inline-block bg-transparent text-slate-100 px-8 py-3.5 rounded-md font-semibold text-[0.95rem] border border-accent/15 hover:border-accent transition-[border-color,transform] hover:-translate-y-px no-underline"
+          >
+            See Our Services
+          </a>
         </div>
       </div>
 
-      <!-- Before / After totals -->
-      <div class="grid grid-cols-2 border-t border-accent/10">
-        <div class="px-6 py-5 border-r border-accent/10">
-          <div class="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-slate-500 mb-1.5">Carrier original</div>
-          <div class="font-heading text-[1.6rem] font-bold text-red-400 leading-none mb-1">$18,732</div>
-          <div class="text-[0.72rem] text-slate-500">Before supplement</div>
-        </div>
-        <div class="px-6 py-5 bg-accent-teal/[0.04]">
-          <div class="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-accent-teal mb-1.5">After supplement</div>
-          <div class="font-heading text-[1.6rem] font-bold text-accent-teal leading-none mb-1">$24,752</div>
-          <div class="text-[0.72rem] text-accent-teal/70 font-semibold">+$6,019 recovered</div>
-        </div>
-      </div>
+      <!-- Right: XM8 estimate card -->
+      <div class="bg-secondary border border-accent/15 rounded-2xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
 
+        <!-- Document toolbar -->
+        <div class="bg-[#0d1f30] px-4 py-3 flex items-center justify-between border-b border-accent/10">
+          <div class="flex items-center gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span class="text-[0.72rem] text-slate-400 font-medium">Xactimate Estimate — Dwelling / Roof</span>
+          </div>
+          <span class="text-[0.68rem] text-accent-teal bg-accent-teal/10 border border-accent-teal/20 px-2.5 py-1 rounded-full font-semibold">Supplement Filed</span>
+        </div>
+
+        <!-- Screenshot with fade -->
+        <div class="relative overflow-hidden" style="max-height: 260px;">
+          <img
+            src="/xm8_preview.jpg"
+            alt="Real Xactimate estimate showing line items including ice and water barrier, roofing felt, metal roofing, and supplemented items"
+            class="w-full object-top object-cover"
+            style="filter: brightness(0.97);"
+          />
+          <div class="absolute bottom-0 left-0 right-0 h-24"
+            style="background: linear-gradient(to bottom, transparent, #162A3E);">
+          </div>
+        </div>
+
+        <!-- Before / After totals -->
+        <div class="grid grid-cols-2 border-t border-accent/10">
+          <div class="px-6 py-5 border-r border-accent/10">
+            <div class="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-slate-500 mb-1.5">Carrier original</div>
+            <div class="font-heading text-[1.6rem] font-bold text-red-400 leading-none mb-1">$18,732</div>
+            <div class="text-[0.72rem] text-slate-500">Before supplement</div>
+          </div>
+          <div class="px-6 py-5 bg-accent-teal/[0.04]">
+            <div class="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-accent-teal mb-1.5">After supplement</div>
+            <div class="font-heading text-[1.6rem] font-bold text-accent-teal leading-none mb-1">$24,752</div>
+            <div class="text-[0.72rem] text-accent-teal/70 font-semibold">+$6,019 recovered</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
