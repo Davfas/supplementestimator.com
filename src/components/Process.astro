@@ -35,8 +35,21 @@ const steps = [
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
-<section id="process" class="px-5 md:px-8 py-24 bg-secondary border-t border-b border-accent/15">
-  <div class="max-w-page mx-auto">
+<section
+  id="process"
+  class="relative px-5 md:px-8 py-24 border-t border-b border-accent/15 overflow-hidden"
+  style="background-color: #0C1926;"
+>
+  <!-- Parallax background -->
+  <div
+    class="absolute inset-0 bg-center bg-cover"
+    style="background-image: url('/hail-roof.jpg'); background-attachment: fixed; background-size: cover; background-position: center; opacity: 0.18;"
+  ></div>
+
+  <!-- Dark overlay for readability -->
+  <div class="absolute inset-0" style="background: linear-gradient(to bottom, #0C1926cc, #162A3Ecc);"></div>
+
+  <div class="max-w-page mx-auto relative z-10">
     <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">How It Works</div>
     <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] text-white mb-4 max-w-[600px]">
       Five steps. You stay on the roof.
@@ -48,17 +61,12 @@ const steps = [
     <ol class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4 list-none p-0 m-0">
       {steps.map((s, i) => (
         <li class="relative flex flex-row lg:flex-col items-start lg:items-center gap-4 lg:gap-0 text-left lg:text-center py-4 lg:py-0">
-
-          {/* Connector line between steps (desktop only) */}
           {i < steps.length - 1 && (
             <div class="hidden lg:block absolute top-[28px] left-[calc(50%+28px)] right-[calc(-50%+28px)] h-px bg-accent/20 z-0"></div>
           )}
-
-          {/* Icon circle */}
           <div class="relative z-10 w-14 h-14 rounded-full bg-primary border-2 border-accent/30 flex items-center justify-center mb-0 lg:mb-5 shrink-0 lg:shrink">
             <i class={`ti ${s.icon}`} style="font-size: 1.3rem; color: #3B82F6;" aria-hidden="true"></i>
           </div>
-
           <div>
             <div class="font-heading text-[0.7rem] font-bold text-accent/50 uppercase tracking-[0.12em] mb-1">{s.n}</div>
             <h4 class="font-heading text-base font-bold text-white mb-2">{s.title}</h4>
