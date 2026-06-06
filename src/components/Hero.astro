@@ -1,13 +1,18 @@
 ---
-const stats = [
-  { number: '7,000+', label: 'Claims Handled' },
-  { number: '10+', label: 'Years Experience' },
-  { number: '50', label: 'States Covered' },
+const lineItems = [
+  { label: 'Roof Tear-off & Haul Away', amount: '$2,841.00' },
+  { label: 'Decking Replacement (OSB)', amount: '$1,204.50' },
+  { label: 'Ice & Water Shield', amount: '$618.00' },
+  { label: 'Drip Edge (Alum)', amount: '$312.00' },
+  { label: 'Ridge Cap Shingles', amount: '$284.00' },
+  { label: 'Code Upgrade — Permit', amount: '$450.00' },
+  { label: 'Contractor Overhead & Profit', amount: '$2,043.25' },
 ];
 ---
 
 <section class="hero-glow min-h-screen flex items-center px-5 md:px-8 pt-32 pb-12 md:pt-32 md:pb-16">
   <div class="max-w-page mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
     <!-- Content -->
     <div class="relative z-10">
       <span class="inline-block text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-6 px-4 py-1.5 border border-accent-teal/30 rounded-full">
@@ -35,14 +40,64 @@ const stats = [
       </div>
     </div>
 
-    <!-- Stats card -->
-    <div class="bg-secondary border border-accent/15 rounded-2xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-0 md:max-w-[500px] md:mx-auto lg:max-w-none lg:mx-0">
-      {stats.map((s) => (
-        <div class="hero-stat">
-          <div class="font-heading text-5xl font-extrabold text-accent leading-none mb-2">{s.number}</div>
-          <div class="text-[0.85rem] text-slate-400 font-medium uppercase tracking-[0.06em]">{s.label}</div>
+    <!-- Xactimate mockup card -->
+    <div class="bg-secondary border border-accent/15 rounded-2xl overflow-hidden shadow-2xl">
+
+      <!-- Fake app title bar -->
+      <div class="bg-[#0d1f30] px-5 py-3 flex items-center justify-between border-b border-accent/10">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500/70"></div>
         </div>
-      ))}
+        <span class="text-[0.7rem] text-slate-500 font-mono tracking-wide">Xactimate — Estimate #XM-2024-1187</span>
+        <div class="w-16"></div>
+      </div>
+
+      <!-- Estimate header -->
+      <div class="px-6 pt-5 pb-3 border-b border-accent/10">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-slate-500">Insured</span>
+          <span class="text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-slate-500">Claim Type</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-slate-200 font-medium">Johnson Residence</span>
+          <span class="text-[0.75rem] text-accent-teal bg-accent-teal/10 border border-accent-teal/20 px-2 py-0.5 rounded font-semibold">Wind / Hail</span>
+        </div>
+      </div>
+
+      <!-- Line items -->
+      <div class="px-6 py-4">
+        <div class="text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-slate-500 mb-3 flex justify-between">
+          <span>Line Item</span>
+          <span>Amount</span>
+        </div>
+        <ul class="flex flex-col gap-0 list-none p-0 m-0">
+          {lineItems.map((item) => (
+            <li class="flex justify-between items-center py-2 border-b border-accent/[0.07] text-[0.8rem]">
+              <span class="text-slate-300">{item.label}</span>
+              <span class="text-slate-200 font-mono font-medium tabular-nums">{item.amount}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Before / After totals -->
+      <div class="mx-6 mb-6 mt-2 rounded-xl overflow-hidden border border-accent/15">
+        <div class="grid grid-cols-2">
+          <div class="bg-surface/60 px-5 py-4 border-r border-accent/15">
+            <div class="text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-slate-500 mb-1">Carrier Paid</div>
+            <div class="font-heading text-[1.4rem] font-bold text-red-400 leading-none">$18,732</div>
+            <div class="text-[0.7rem] text-slate-500 mt-1">Original estimate</div>
+          </div>
+          <div class="bg-accent-teal/[0.06] px-5 py-4">
+            <div class="text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-accent-teal mb-1">After Supplement</div>
+            <div class="font-heading text-[1.4rem] font-bold text-accent-teal leading-none">$24,752</div>
+            <div class="text-[0.7rem] text-accent-teal/60 mt-1 font-semibold">+$6,019 recovered</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
