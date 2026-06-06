@@ -6,10 +6,13 @@ const links = [
 ];
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 px-5 md:px-8 py-5 flex items-center justify-between bg-primary/90 backdrop-blur-md border-b border-accent/15">
-  <a href="/" class="flex flex-col no-underline">
-    <span class="font-heading font-bold text-[1.15rem] text-white tracking-tight leading-tight">Precision Estimating</span>
-    <span class="text-[0.7rem] text-accent font-medium tracking-[0.08em] uppercase">&amp; Supplements</span>
+<nav class="fixed top-0 left-0 right-0 z-50 px-5 md:px-8 py-3 flex items-center justify-between bg-primary/90 backdrop-blur-md border-b border-accent/15">
+  <a href="/" class="flex items-center gap-3 no-underline">
+    <img
+      src="/precision-logo.png"
+      alt="Precision Estimating and Supplements"
+      class="h-12 w-auto"
+    />
   </a>
 
   <ul class="hidden md:flex gap-8 items-center list-none m-0 p-0">
@@ -83,7 +86,6 @@ const links = [
     setOpen(isHidden);
   });
 
-  // Close menu when any link inside it is tapped.
   menu?.querySelectorAll('a').forEach((a) => {
     a.addEventListener('click', () => setOpen(false));
   });
