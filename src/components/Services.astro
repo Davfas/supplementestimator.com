@@ -1,43 +1,45 @@
 ---
 const services = [
   {
-    photo: 'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80&fit=crop',
-    photoAlt: 'Roofer installing shingles on a residential roof',
+    icon: 'ti-file-text',
+    accent: '#3B82F6',
     title: 'Xactimate Estimate Writing',
     body: "Accurate, detailed, code-compliant estimates built in Xactimate with local pricing. Ready for carrier submission or client review. We don't miss line items.",
   },
   {
-    photo: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop',
-    photoAlt: 'Close-up of hail damage on roof shingles',
+    icon: 'ti-search',
+    accent: '#14B8A6',
     title: 'Supplement Writing',
     body: "We tear apart the carrier's scope line by line. Missing materials, underpaid labor, code upgrades, overlooked damage. If it belongs on the claim, we find it and we document it.",
   },
   {
-    photo: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&fit=crop',
-    photoAlt: 'Professional on a phone call negotiating a business deal',
+    icon: 'ti-messages',
+    accent: '#3B82F6',
     title: 'Carrier Negotiations',
     body: "We go back and forth with the adjuster so you don't have to. Documentation, follow-ups, pushback. We've worked with dozens of carriers and we know what gets approved.",
   },
   {
-    photo: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80&fit=crop',
-    photoAlt: 'Professional reviewing financial documents and invoice',
+    icon: 'ti-receipt',
+    accent: '#14B8A6',
     title: 'Final Invoice Submission',
     body: 'After the work is done, we prepare and submit the final invoice to the carrier, handle any additional documentation requests, and follow up until the payment clears.',
   },
   {
-    photo: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80&fit=crop',
-    photoAlt: 'Contractor on a job site reviewing plans',
+    icon: 'ti-school',
+    accent: '#3B82F6',
     title: 'Consulting & Training',
     body: 'Want your team to handle supplements in-house? We train your people on Xactimate, supplement strategy, carrier communication, and what to look for on every claim.',
   },
   {
-    photo: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&fit=crop',
-    photoAlt: 'Two professionals shaking hands in agreement',
+    icon: 'ti-shield-check',
+    accent: '#14B8A6',
     title: 'Fully White Labeled',
     body: "We work inside your CRM, from your email, under your name. To the carrier, we're your employee. Your brand stays front and center.",
   },
 ];
 ---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
 <section id="services" class="px-5 md:px-8 py-24 max-w-page mx-auto">
   <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">What We Do</div>
@@ -50,17 +52,17 @@ const services = [
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     {services.map((s) => (
-      <article class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5">
-        <div class="relative h-48 overflow-hidden">
-          <img
-            src={s.photo}
-            alt={s.photoAlt}
-            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, #162A3E 100%);"></div>
-        </div>
+      <article
+        class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5"
+      >
+        <div class="h-1 w-full" style={`background: ${s.accent};`}></div>
         <div class="p-8">
+          <div
+            class="w-12 h-12 rounded-[10px] flex items-center justify-center mb-6"
+            style={`background: ${s.accent}18; border: 1px solid ${s.accent}30;`}
+          >
+            <i class={`ti ${s.icon}`} style={`font-size: 1.4rem; color: ${s.accent};`} aria-hidden="true"></i>
+          </div>
           <h3 class="font-heading text-[1.25rem] font-bold text-white mb-3">{s.title}</h3>
           <p class="text-slate-400 text-[0.95rem] leading-[1.65]">{s.body}</p>
         </div>
