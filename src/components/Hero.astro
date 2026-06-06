@@ -1,23 +1,39 @@
 ---
 ---
 
-<section class="hero-glow min-h-screen flex items-center px-5 md:px-8 pt-32 pb-20 relative overflow-hidden">
+<!-- Section 1: Logo + parallax background -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
 
   <!-- Parallax background photo -->
   <div
     class="absolute inset-0"
     style="background-image: url('/hurricane-house.jpg'); background-attachment: fixed; background-size: cover; background-position: center;"
   ></div>
-  <!-- Dark overlay so text stays readable -->
-  <div class="absolute inset-0" style="background: linear-gradient(135deg, #0C1926bb 0%, #0C192666 100%);"></div>
 
-  <!-- Logo watermark centered behind everything -->
+  <!-- Light dark overlay for contrast -->
+  <div class="absolute inset-0" style="background: rgba(12, 25, 38, 0.45);"></div>
+
+  <!-- Logo centered -->
+  <div class="relative z-10 flex items-center justify-center">
+    <img
+      src="/precision-logo.png"
+      alt="Precision Estimating and Supplements"
+      class="w-[1300px] max-w-[110vw] opacity-[0.55]"
+    />
+  </div>
+
+</section>
+
+<!-- Section 2: Content -->
+<section class="relative px-5 md:px-8 py-24 overflow-hidden" style="background-color: #0C1926;">
+
+  <!-- Logo watermark -->
   <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
     <img
       src="/precision-logo.png"
       alt=""
       aria-hidden="true"
-      class="w-[1300px] max-w-[110vw] opacity-[0.35]"
+      class="w-[800px] max-w-[80vw] opacity-[0.04]"
     />
   </div>
 
