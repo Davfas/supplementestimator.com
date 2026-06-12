@@ -1,0 +1,47 @@
+---
+import ServicePage from '../../components/ServicePage.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Insurance Carrier Negotiations",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Precision Estimating and Supplements",
+    "url": "https://supplementestimator.com"
+  },
+  "description": "Professional insurance carrier negotiations for roofing contractors, GCs, and restoration companies. We fight carriers on your behalf to get claims approved at the right amount.",
+  "url": "https://supplementestimator.com/services/carrier-negotiations",
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "serviceType": "Insurance Carrier Negotiations"
+};
+
+const benefits = [
+  { icon: "ti-shield-check", title: "Former Adjuster Advantage", body: "Dave Faso spent years working as a licensed adjuster. He knows carrier tactics, knows how desk adjusters think, and knows exactly how to counter their arguments." },
+  { icon: "ti-file-text", title: "Documentation That Wins", body: "Every negotiation is backed by code citations, manufacturer specs, carrier guidelines, and properly documented scope — not just arguing back and forth." },
+  { icon: "ti-users", title: "You Stay Focused on the Job", body: "Carrier calls and emails are time-consuming. We handle the back-and-forth so you can stay on the roof and run your business." },
+  { icon: "ti-trending-up", title: "Higher Approval Rates", body: "Our negotiations consistently result in higher approved amounts than contractors achieve negotiating on their own." },
+  { icon: "ti-eye-off", title: "White Label Available", body: "We can handle negotiations behind the scenes under your company name if you prefer your clients don't know you're using a third party." },
+  { icon: "ti-home-2", title: "All Contractor Types", body: "We negotiate on behalf of roofing contractors, general contractors, and restoration companies on both residential and commercial claims." }
+];
+
+const faqs = [
+  { q: "What does carrier negotiation involve?", a: "When a carrier underpays, denies a line item, or issues a partial approval, we step in to dispute their position. We review their reasoning, prepare a documented response, and communicate directly with the adjuster or desk reviewer to get the claim corrected." },
+  { q: "Can you negotiate claims that were already closed?", a: "In many cases, yes. Depending on the state and timeframe, it may be possible to reopen a claim and negotiate additional payment. Contact us with your claim details and we'll let you know what's possible." },
+  { q: "What if the carrier still denies after negotiation?", a: "We exhaust every reasonable avenue before recommending escalation. If needed, we can help you understand your options including appraisal, mediation, or referral to a public adjuster or attorney." },
+  { q: "Do I need to be on the calls with the carrier?", a: "Not usually. We handle communications on your behalf. You'll be kept informed at every step but you don't need to sit on hold with carrier reps." },
+  { q: "How do you charge for carrier negotiations?", a: "Pricing depends on the complexity and scope of the claim. Contact us for a quote — we'll review what you have and give you a clear picture of costs before we start." }
+];
+---
+
+<ServicePage
+  title="Insurance Carrier Negotiations for Contractors | Precision Estimating"
+  description="We negotiate with insurance carriers on your behalf. Former licensed adjuster with 7,000+ claims experience fights for the full amount your claim deserves. Roofing, GC, restoration. Nationwide."
+  canonical="https://supplementestimator.com/services/carrier-negotiations"
+  headline="We Negotiate With Carriers So You Don't Have To"
+  subheadline="A former licensed adjuster in your corner changes everything. We fight for the full amount your claim deserves."
+  icon="ti-gavel"
+  benefits={benefits}
+  faqs={faqs}
+  schema={schema}
+/>
