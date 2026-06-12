@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://supplementestimator.com/sitemap-index.xml
