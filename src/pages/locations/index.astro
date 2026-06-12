@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTA from '../../components/CTA.astro';
+
+const currentMarkets = [
+  { name: "Minnesota", slug: "minnesota", abbr: "MN" },
+  { name: "Colorado", slug: "colorado", abbr: "CO" },
+  { name: "South Dakota", slug: "south-dakota", abbr: "SD" },
+  { name: "Wisconsin", slug: "wisconsin", abbr: "WI" },
+  { name: "Wyoming", slug: "wyoming", abbr: "WY" },
+  { name: "Florida", slug: "florida", abbr: "FL" },
+  { name: "Arizona", slug: "arizona", abbr: "AZ" },
+];
+
+const expandingMarkets = [
+  { name: "Nebraska", slug: "nebraska", abbr: "NE" },
+  { name: "Iowa", slug: "iowa", abbr: "IA" },
+  { name: "Missouri", slug: "missouri", abbr: "MO" },
+  { name: "Alaska", slug: "alaska", abbr: "AK" },
+  { name: "Connecticut", slug: "connecticut", abbr: "CT" },
+  { name: "Kentucky", slug: "kentucky", abbr: "KY" },
+  { name: "Rhode Island", slug: "rhode-island", abbr: "RI" },
+  { name: "Utah", slug: "utah", abbr: "UT" },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Precision Estimating and Supplements",
+  "url": "https://supplementestimator.com",
+  "description": "Nationwide insurance supplement estimating for roofing contractors, general contractors, and restoration companies.",
+  "areaServed": { "@type": "Country", "name": "United States" }
+};
+---
+
+<Layout
+  title="Locations Served | Precision Estimating and Supplements"
+  description="Precision Estimating serves roofing contractors, GCs, and restoration companies across the United States. 100% remote service — no matter where your jobs are, we can help."
+  canonical="https://supplementestimator.com/locations"
+  schema={schema}
+>
+  <section class="px-5 md:px-8 pt-32 pb-20 bg-secondary relative overflow-hidden">
+    <div class="hero-glow absolute inset-0 pointer-events-none"></div>
+    <div class="max-w-page mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 bg-surface border border-accent/20 rounded-full px-4 py-1.5 text-accent text-sm font-medium mb-6">
+        <i class="ti ti-map-pin"></i> Nationwide Service
+      </div>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        Serving Contractors Across the United States
+      </h1>
+      <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto">
+        Precision Estimating works 100% remotely. No matter where your jobs are, we can write estimates, handle supplements, and negotiate with carriers on your behalf.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-5 md:px-8 py-20 bg-primary">
+    <div class="max-w-page mx-auto">
+      <h2 class="font-heading text-3xl font-bold text-white mb-2">Active Markets</h2>
+      <p class="text-slate-400 mb-10">States where we currently have active contractor relationships.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {currentMarkets.map((loc) => (
+          <a href={`/locations/${loc.slug}`} class="bg-surface border border-accent/20 hover:border-accent/50 rounded-xl p-4 flex items-center gap-3 transition-colors group">
+            <div class="w-9 h-9 bg-primary border border-accent/15 rounded-lg flex items-center justify-center text-accent-teal font-heading font-bold text-sm flex-shrink-0">
+              {loc.abbr}
+            </div>
+            <span class="text-slate-200 font-medium group-hover:text-white transition-colors">{loc.name}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-5 md:px-8 py-20 bg-secondary">
+    <div class="max-w-page mx-auto">
+      <h2 class="font-heading text-3xl font-bold text-white mb-2">Expanding Into</h2>
+      <p class="text-slate-400 mb-10">We're actively growing into these states — contractors welcome.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {expandingMarkets.map((loc) => (
+          <a href={`/locations/${loc.slug}`} class="bg-surface border border-accent/15 hover:border-accent/40 rounded-xl p-4 flex items-center gap-3 transition-colors group">
+            <div class="w-9 h-9 bg-primary border border-accent/15 rounded-lg flex items-center justify-center text-accent font-heading font-bold text-sm flex-shrink-0">
+              {loc.abbr}
+            </div>
+            <span class="text-slate-300 font-medium group-hover:text-white transition-colors">{loc.name}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-5 md:px-8 py-16 bg-primary border-t border-accent/15 text-center">
+    <div class="max-w-page mx-auto">
+      <h2 class="font-heading text-2xl font-bold text-white mb-4">Don't See Your State?</h2>
+      <p class="text-slate-300 max-w-xl mx-auto mb-8">
+        We serve contractors in all 50 states. Reach out and we'll get you taken care of — no matter where you're located.
+      </p>
+      <a href="tel:+16057602228" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+        <i class="ti ti-phone"></i> Call Us Today
+      </a>
+    </div>
+  </section>
+
+  <CTA />
+</Layout>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
