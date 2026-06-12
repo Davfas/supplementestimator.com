@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTA from './CTA.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  headline: string;
+  subheadline: string;
+  icon: string;
+  benefits: { icon: string; title: string; body: string }[];
+  faqs: { q: string; a: string }[];
+  schema: object;
+}
+
+const { title, description, canonical, headline, subheadline, icon, benefits, faqs, schema } = Astro.props;
+---
+
+<Layout title={title} description={description} canonical={canonical} schema={schema}>
+  <!-- Hero -->
+  <section class="px-5 md:px-8 pt-32 pb-20 bg-secondary relative overflow-hidden">
+    <div class="hero-glow absolute inset-0 pointer-events-none"></div>
+    <div class="max-w-page mx-auto text-center relative z-10">
+      <div class="w-16 h-16 bg-surface border border-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+        <i class={`ti ${icon}`} style="font-size: 2rem; color: #3B82F6;"></i>
+      </div>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        {headline}
+      </h1>
+      <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto">
+        {subheadline}
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+16057602228" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+          <i class="ti ti-phone"></i> Call Now
+        </a>
+        <a href="mailto:dave@supplementestimator.com" class="inline-flex items-center justify-center gap-2 bg-surface border border-accent/20 hover:border-accent/50 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+          <i class="ti ti-mail"></i> Email Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="px-5 md:px-8 py-20 bg-primary">
+    <div class="max-w-page mx-auto">
+      <h2 class="font-heading text-3xl font-bold text-white text-center mb-12">Why Choose Precision?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {benefits.map((b) => (
+          <div class="bg-surface border border-accent/15 rounded-2xl p-6">
+            <div class="w-10 h-10 bg-primary border border-accent/20 rounded-lg flex items-center justify-center mb-4">
+              <i class={`ti ${b.icon}`} style="font-size: 1.2rem; color: #14B8A6;"></i>
+            </div>
+            <h3 class="font-heading text-lg font-semibold text-white mb-2">{b.title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{b.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-5 md:px-8 py-20 bg-secondary">
+    <div class="max-w-page mx-auto max-w-3xl">
+      <h2 class="font-heading text-3xl font-bold text-white text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <div class="bg-surface border border-accent/15 rounded-2xl p-6">
+            <h3 class="font-heading text-lg font-semibold text-white mb-2">{faq.q}</h3>
+            <p class="text-slate-400 leading-relaxed">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Layout>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
