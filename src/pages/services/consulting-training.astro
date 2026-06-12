@@ -1,0 +1,47 @@
+---
+import ServicePage from '../../components/ServicePage.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Insurance Claims Consulting and Training",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Precision Estimating and Supplements",
+    "url": "https://supplementestimator.com"
+  },
+  "description": "Insurance claims consulting and Xactimate training for roofing contractors, GCs, and restoration companies. Learn to write better estimates and negotiate stronger claims.",
+  "url": "https://supplementestimator.com/services/consulting-training",
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "serviceType": "Insurance Claims Consulting and Training"
+};
+
+const benefits = [
+  { icon: "ti-school", title: "Learn From a Former Adjuster", body: "Training from Dave Faso means learning how carriers actually think — not just how to use software, but how to document claims that get approved." },
+  { icon: "ti-certificate", title: "Xactimate Best Practices", body: "Learn which line items carriers fight, how to price materials correctly, and how to build estimates that are bulletproof from the start." },
+  { icon: "ti-chart-line", title: "Improve Your Bottom Line", body: "Contractors who understand the claims process get paid more per job. Training is an investment that pays back on every claim you write." },
+  { icon: "ti-users", title: "Team Training Available", body: "We can train your entire estimating team — in-person or remote — so your whole operation levels up, not just one person." },
+  { icon: "ti-message-circle", title: "Ongoing Consulting", body: "Have a tough claim? Not sure how to handle a carrier dispute? Our consulting service gives you expert guidance when you need it most." },
+  { icon: "ti-home-2", title: "For All Contractor Types", body: "Our consulting and training is tailored to roofing contractors, general contractors, and restoration companies at all experience levels." }
+];
+
+const faqs = [
+  { q: "Who is this training designed for?", a: "Our training is designed for roofing contractors, GCs, and restoration companies who want to improve their claims outcomes — whether they're brand new to insurance work or experienced contractors looking to sharpen their skills." },
+  { q: "Is training done in person or remotely?", a: "Both options are available. Most training is done via video call for convenience, but we can arrange in-person sessions for teams depending on location." },
+  { q: "What topics does the training cover?", a: "We cover Xactimate fundamentals, line item documentation, pricing strategies, supplement identification, carrier negotiation tactics, and how to structure a claim from inspection through final payment." },
+  { q: "What's the difference between consulting and training?", a: "Training is educational — we teach you and your team how to handle claims better. Consulting is situational — you bring us a specific claim or problem and we advise you on the best path forward." },
+  { q: "Can you help us set up an in-house estimating process?", a: "Yes. We can help you build out your internal estimating workflow, create templates, and establish a documentation process that produces strong, consistent estimates every time." }
+];
+---
+
+<ServicePage
+  title="Insurance Claims Consulting & Xactimate Training | Precision Estimating"
+  description="Xactimate training and insurance claims consulting from a former licensed adjuster. Learn to write better estimates, negotiate stronger claims, and get paid what you're owed. Nationwide."
+  canonical="https://supplementestimator.com/services/consulting-training"
+  headline="Consulting & Training From Someone Who's Been on Both Sides"
+  subheadline="Learn how carriers think, how to document claims properly, and how to get every dollar your jobs deserve."
+  icon="ti-school"
+  benefits={benefits}
+  faqs={faqs}
+  schema={schema}
+/>
