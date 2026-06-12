@@ -1,0 +1,47 @@
+---
+import ServicePage from '../../components/ServicePage.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Xactimate Estimate Writing",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Precision Estimating and Supplements",
+    "url": "https://supplementestimator.com"
+  },
+  "description": "Professional Xactimate estimate writing for roofing contractors, general contractors, and restoration companies. Accurate, carrier-ready estimates written by a former licensed adjuster.",
+  "url": "https://supplementestimator.com/services/xactimate-estimate-writing",
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "serviceType": "Xactimate Estimate Writing"
+};
+
+const benefits = [
+  { icon: "ti-certificate", title: "Xactimate Certified Writer", body: "Every estimate is written by a certified Xactimate professional who knows exactly how carriers review and price line items." },
+  { icon: "ti-shield-check", title: "Former Licensed Adjuster", body: "Dave Faso spent years on the carrier side. He knows what adjusters look for — and how to write estimates they can't easily cut." },
+  { icon: "ti-clock", title: "Fast Turnaround", body: "Most estimates are delivered within 24–48 hours. Fast documentation means faster approval and faster payment for your crew." },
+  { icon: "ti-checklist", title: "Carrier-Ready Documentation", body: "Estimates include all required line items, proper pricing, and documentation that stands up to carrier review." },
+  { icon: "ti-eye-off", title: "White Label Available", body: "We work silently in the background under your brand. Your clients never know we're involved." },
+  { icon: "ti-home-2", title: "Roofing, GC & Restoration", body: "We serve all contractor types — roofing, general contractors, and full restoration companies across all 50 states." }
+];
+
+const faqs = [
+  { q: "What is Xactimate and why does it matter?", a: "Xactimate is the industry-standard software used by insurance carriers to price property damage claims. If your estimate isn't written in Xactimate, carriers will often rewrite it at a lower number. A properly written Xactimate estimate ensures you're priced at the right level from the start." },
+  { q: "What do I need to send you to get started?", a: "We just need your inspection photos, any existing carrier estimate (if one exists), and basic job details. We handle the rest from there." },
+  { q: "How long does it take to get an estimate back?", a: "Standard turnaround is 24–48 hours. Rush turnaround is available for urgent jobs — just let us know when you reach out." },
+  { q: "Do you work with all insurance carriers?", a: "Yes. We write estimates that comply with all major carrier platforms and review processes, including State Farm, Allstate, Travelers, USAA, and others." },
+  { q: "Can you write estimates for commercial jobs?", a: "Absolutely. We handle both residential and commercial property claims for roofing, siding, interior damage, and full restoration scopes." }
+];
+---
+
+<ServicePage
+  title="Xactimate Estimate Writing for Contractors | Precision Estimating"
+  description="Professional Xactimate estimate writing by a former licensed adjuster. Carrier-ready estimates for roofing, GC, and restoration contractors. Nationwide. Fast turnaround."
+  canonical="https://supplementestimator.com/services/xactimate-estimate-writing"
+  headline="Xactimate Estimate Writing That Gets Approved"
+  subheadline="Carrier-ready estimates written by a former licensed adjuster. Stop leaving money on the table with under-documented scopes."
+  icon="ti-file-description"
+  benefits={benefits}
+  faqs={faqs}
+  schema={schema}
+/>
