@@ -1,9 +1,4 @@
 ---
-const links = [
-  { href: '#services', label: 'Services' },
-  { href: '#process', label: 'Process' },
-  { href: '#about', label: 'About' },
-];
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 px-5 md:px-8 py-4 flex items-center justify-between bg-primary/90 backdrop-blur-md border-b border-accent/15">
@@ -16,16 +11,45 @@ const links = [
   </a>
 
   <ul class="hidden md:flex gap-8 items-center list-none m-0 p-0">
-    {links.map((l) => (
-      <li>
-        <a href={l.href} class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
-          {l.label}
-        </a>
-      </li>
-    ))}
+
+    <!-- Services dropdown -->
+    <li class="relative group">
+      <a href="/services" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline flex items-center gap-1">
+        Services <span class="text-xs">▾</span>
+      </a>
+      <div class="absolute top-full left-0 mt-2 w-56 bg-primary border border-accent/20 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <a href="/services/xactimate-estimate-writing" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface rounded-t-xl transition-colors no-underline">Xactimate Estimate Writing</a>
+        <a href="/services/supplement-writing" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Supplement Writing</a>
+        <a href="/services/carrier-negotiations" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Carrier Negotiations</a>
+        <a href="/services/consulting-training" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface rounded-b-xl transition-colors no-underline">Consulting & Training</a>
+      </div>
+    </li>
+
+    <!-- Locations dropdown -->
+    <li class="relative group">
+      <a href="/locations" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline flex items-center gap-1">
+        Locations <span class="text-xs">▾</span>
+      </a>
+      <div class="absolute top-full left-0 mt-2 w-48 bg-primary border border-accent/20 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <a href="/locations/minnesota" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface rounded-t-xl transition-colors no-underline">Minnesota</a>
+        <a href="/locations/colorado" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Colorado</a>
+        <a href="/locations/florida" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Florida</a>
+        <a href="/locations/south-dakota" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">South Dakota</a>
+        <a href="/locations/wisconsin" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Wisconsin</a>
+        <a href="/locations/arizona" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Arizona</a>
+        <a href="/locations" class="block px-4 py-3 text-sm text-accent hover:text-white hover:bg-surface rounded-b-xl transition-colors no-underline font-medium">View All States →</a>
+      </div>
+    </li>
+
     <li>
-      <a
-        href="#contact"
+      <a href="/#process" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">Process</a>
+    </li>
+    <li>
+      <a href="/#about" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">About</a>
+    </li>
+    <li>
+      
+        href="/#contact"
         class="bg-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-colors no-underline"
       >
         Get Started
@@ -45,48 +69,24 @@ const links = [
   </button>
 </nav>
 
-<!-- Mobile menu panel -->
+<!-- Mobile menu -->
 <div
   id="mobile-menu"
-  class="hidden md:hidden fixed top-[68px] left-0 right-0 z-40 bg-primary/95 backdrop-blur-md border-b border-accent/15"
+  class="hidden md:hidden fixed top-[68px] left-0 right-0 z-40 bg-primary/95 backdrop-blur-md border-b border-accent/15 overflow-y-auto max-h-[80vh]"
 >
   <ul class="flex flex-col gap-1 p-6 m-0 list-none">
-    {links.map((l) => (
-      <li>
-        <a href={l.href} class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
-          {l.label}
-        </a>
-      </li>
-    ))}
-    <li>
-      <a
-        href="#contact"
-        class="block mt-2 bg-accent hover:bg-blue-600 text-white px-6 py-3 rounded-md font-semibold text-center transition-colors no-underline"
-      >
-        Get Started
-      </a>
-    </li>
-  </ul>
-</div>
+    <li class="text-xs font-semibold tracking-widest uppercase text-slate-500 pt-2 pb-1">Services</li>
+    <li><a href="/services/xactimate-estimate-writing" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Xactimate Estimate Writing</a></li>
+    <li><a href="/services/supplement-writing" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Supplement Writing</a></li>
+    <li><a href="/services/carrier-negotiations" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Carrier Negotiations</a></li>
+    <li><a href="/services/consulting-training" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Consulting & Training</a></li>
 
-<script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const icon = document.getElementById('mobile-menu-icon');
+    <li class="text-xs font-semibold tracking-widest uppercase text-slate-500 pt-4 pb-1">Locations</li>
+    <li><a href="/locations/minnesota" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Minnesota</a></li>
+    <li><a href="/locations/colorado" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Colorado</a></li>
+    <li><a href="/locations/florida" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Florida</a></li>
+    <li><a href="/locations" class="block py-2 text-accent text-base font-medium transition-colors no-underline">View All States →</a></li>
 
-  function setOpen(open: boolean) {
-    if (!btn || !menu || !icon) return;
-    menu.classList.toggle('hidden', !open);
-    btn.setAttribute('aria-expanded', String(open));
-    icon.textContent = open ? '✕' : '☰';
-  }
-
-  btn?.addEventListener('click', () => {
-    const isHidden = menu?.classList.contains('hidden') ?? true;
-    setOpen(isHidden);
-  });
-
-  menu?.querySelectorAll('a').forEach((a) => {
-    a.addEventListener('click', () => setOpen(false));
-  });
-</script>
+    <li class="text-xs font-semibold tracking-widest uppercase text-slate-500 pt-4 pb-1">More</li>
+    <li><a href="/#process" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Process</a></li>
+    <li><a href="/#about
