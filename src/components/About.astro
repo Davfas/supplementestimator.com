@@ -1,52 +1,188 @@
 ---
-const creds = [
-  '10+ years working claims from both sides',
-  '7,000+ claims handled',
-  'Xactimate and Symbility mastery',
-  'Former Licensed Insurance Adjuster',
-  'Nationwide coverage',
+const services = [
+  {
+    icon: 'ti-file-text',
+    gradient: 'linear-gradient(135deg, #1d4ed8 0%, #06b6d4 100%)',
+    accentColor: '#38bdf8',
+    hoverBorder: 'rgba(56,189,248,0.35)',
+    title: 'Xactimate Estimate Writing',
+    body: "Accurate, detailed, code-compliant estimates built in Xactimate with local pricing. Ready for carrier submission or client review. We don't miss line items.",
+    href: '/services/xactimate-estimate-writing',
+  },
+  {
+    icon: 'ti-zoom-money',
+    gradient: 'linear-gradient(135deg, #0f766e 0%, #3b82f6 100%)',
+    accentColor: '#14b8a6',
+    hoverBorder: 'rgba(20,184,166,0.35)',
+    title: 'Supplement Writing',
+    body: "We tear apart the carrier's scope line by line. Missing materials, underpaid labor, code upgrades, overlooked damage. If it belongs on the claim, we find it.",
+    href: '/services/supplement-writing',
+  },
+  {
+    icon: 'ti-phone-call',
+    gradient: 'linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%)',
+    accentColor: '#818cf8',
+    hoverBorder: 'rgba(129,140,248,0.35)',
+    title: 'Carrier Negotiations',
+    body: "We go back and forth with the adjuster so you don't have to. Documentation, follow-ups, pushback. We know what gets approved.",
+    href: '/services/carrier-negotiations',
+  },
+  {
+    icon: 'ti-receipt',
+    gradient: 'linear-gradient(135deg, #0369a1 0%, #14b8a6 100%)',
+    accentColor: '#38bdf8',
+    hoverBorder: 'rgba(56,189,248,0.35)',
+    title: 'Final Invoice Submission',
+    body: 'After the work is done, we prepare and submit the final invoice, handle documentation requests, and follow up until the payment clears.',
+    href: '/services/xactimate-estimate-writing',
+  },
+  {
+    icon: 'ti-school',
+    gradient: 'linear-gradient(135deg, #1e40af 0%, #7c3aed 100%)',
+    accentColor: '#a78bfa',
+    hoverBorder: 'rgba(167,139,250,0.35)',
+    title: 'Consulting & Training',
+    body: 'Want your team to handle supplements in-house? We train your people on Xactimate, supplement strategy, and what to look for on every claim.',
+    href: '/services/consulting-training',
+  },
+  {
+    icon: 'ti-eye-off',
+    gradient: 'linear-gradient(135deg, #0f766e 0%, #1d4ed8 100%)',
+    accentColor: '#14b8a6',
+    hoverBorder: 'rgba(20,184,166,0.35)',
+    title: 'Fully White Labeled',
+    body: "We work inside your CRM, from your email, under your name. To the carrier, we're your employee. Your brand stays front and center.",
+    href: '/services/xactimate-estimate-writing',
+  },
 ];
 ---
 
-<section id="about" class="px-5 md:px-8 py-24 max-w-page mx-auto">
-  <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">Who We Are</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+<section id="services" class="px-5 md:px-8 py-24 max-w-page mx-auto">
+
+  <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">What We Do</div>
   <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] text-white mb-4 max-w-[600px]">
-    Built by people who've been on both sides of the claim.
+    Every stage of the claim, handled.
   </h2>
+  <p class="text-slate-400 text-[1.05rem] max-w-[550px] mb-14 leading-[1.7]">
+    From the initial estimate to the final invoice, we handle the paperwork so you can stay on the job site.
+  </p>
 
-  <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-16 items-start mt-12">
-    <aside class="bg-secondary border border-accent/15 rounded-2xl p-10 text-center">
-      <div class="w-[120px] h-[120px] rounded-full mx-auto mb-6 overflow-hidden ring-2 ring-accent/20">
-        <img
-          src="/dave.jpg"
-          alt="Dave Faso, Founder of Precision Estimating and Supplements"
-          class="w-full h-full object-cover object-top"
-        />
-      </div>
-      <h3 class="font-heading text-[1.3rem] font-bold text-white mb-1">Dave Faso</h3>
-      <div class="text-accent-teal text-[0.85rem] font-semibold uppercase tracking-[0.06em] mb-6">Founder</div>
-      <ul class="flex flex-col gap-2 text-left list-none p-0 m-0">
-        {creds.map((c, i) => (
-          <li class={`text-slate-400 text-[0.85rem] py-2 ${i !== creds.length - 1 ? 'border-b border-accent/15' : ''}`}>
-            {c}
-          </li>
-        ))}
-      </ul>
-    </aside>
-
-    <div>
-      <h3 class="font-heading text-[1.5rem] md:text-[1.75rem] font-bold text-white tracking-[-0.02em] mb-6 leading-[1.3]">
-        Dave spent years as a licensed insurance adjuster before crossing over to the contractor side. He's written estimates for carriers, reviewed supplements from the desk, and negotiated claim values from both ends of the phone.
-      </h3>
-      <p class="text-slate-400 text-[1.05rem] leading-[1.7] mb-5">
-        That background means he doesn't guess what adjusters want to see. He knows. He writes supplements in the format and language that carriers are trained to accept, because he used to be the one accepting them.
-      </p>
-      <p class="text-slate-400 text-[1.05rem] leading-[1.7] mb-5">
-        With over 7,000 claims handled nationwide, Dave gives contractors something they rarely get - a claims management department within their own company that has intimate knowledge of the insurance side of the business.
-      </p>
-      <p class="text-slate-400 text-[1.05rem] leading-[1.7]">
-        The team at Precision works as an extension of your operation. We train, coach, and consult your crew for a smooth handoff. We slot in, we do the work, and you collect what you're owed.
-      </p>
-    </div>
+  <div class="svc-grid">
+    {services.map((s) => (
+      <article
+        class="svc-card"
+        style={`--hover-border: ${s.hoverBorder};`}
+      >
+        <div class="svc-banner" style={`background: ${s.gradient};`}>
+          <i class={`ti ${s.icon}`} aria-hidden="true"></i>
+        </div>
+        <div class="svc-content">
+          <h3 class="svc-title">{s.title}</h3>
+          <p class="svc-body">{s.body}</p>
+          <a href={s.href} class="svc-link" style={`color: ${s.accentColor};`}>
+            Learn more <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+    ))}
   </div>
+
 </section>
+
+<style>
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 1024px) {
+    .svc-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .svc-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .svc-card {
+    background: #111e2d;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .svc-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--hover-border);
+  }
+
+  .svc-banner {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .svc-banner .ti {
+    font-size: 2.4rem;
+    color: #ffffff;
+  }
+
+  .svc-content {
+    padding: 1.5rem 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+
+  .svc-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .svc-body {
+    font-size: 0.925rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    margin: 0;
+    flex: 1;
+  }
+
+  .svc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0.25rem;
+    transition: gap 0.2s ease;
+  }
+
+  .svc-link:hover {
+    gap: 0.55rem;
+  }
+
+  .svc-link .ti {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .svc-link:hover .ti {
+    transform: translateX(2px);
+  }
+</style>
