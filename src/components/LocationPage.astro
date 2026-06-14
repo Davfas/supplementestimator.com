@@ -6,9 +6,10 @@ interface Props {
   state: string;
   stateAbbr: string;
   blurb: string;
+  image?: string;
 }
 
-const { state, stateAbbr, blurb } = Astro.props;
+const { state, stateAbbr, blurb, image } = Astro.props;
 
 const title = `Insurance Supplement Estimator in ${state} | Precision Estimating`;
 const description = `Precision Estimating serves roofing contractors, GCs, and restoration companies in ${state}. Xactimate estimates, supplement writing, and carrier negotiations — nationwide remote service.`;
@@ -90,6 +91,17 @@ const services = [
       </div>
     </div>
   </section>
+
+  <!-- State damage photo -->
+  {image && (
+    <div class="w-full overflow-hidden" style="height: 380px;">
+      <img
+        src={image}
+        alt={`Storm damage in ${state}`}
+        class="w-full h-full object-cover object-center"
+      />
+    </div>
+  )}
 
   <!-- Trust bar -->
   <section class="px-5 md:px-8 py-8 border-t border-b border-accent/15">
