@@ -5,24 +5,28 @@ import CTA from '../../components/CTA.astro';
 const services = [
   {
     slug: "xactimate-estimate-writing",
+    href: "/services/xactimate-estimate-writing",
     image: "/firefly-xactimate-hands.png",
     title: "Xactimate Estimate Writing",
     description: "Carrier-ready Xactimate estimates written by a certified professional and former licensed adjuster. Accurate scope, correct pricing, fast turnaround."
   },
   {
     slug: "supplement-writing",
+    href: "/services/supplement-writing",
     image: "/firefly-dual-monitor.png",
     title: "Supplement Writing",
     description: "We audit carrier estimates, identify every missed or underpaid line item, and write complete supplements that recover money you're already owed."
   },
   {
     slug: "carrier-negotiations",
+    href: "/services/carrier-negotiations",
     image: "/firefly-claim-approved.png",
     title: "Carrier Negotiations",
     description: "We negotiate directly with insurance carriers on your behalf — backed by a former adjuster who knows exactly how to document and argue a claim."
   },
   {
     slug: "consulting-training",
+    href: "/services/consulting-training",
     image: "/firefly-training.png",
     title: "Consulting & Training",
     description: "Improve your in-house claims process with Xactimate training and expert consulting from someone who has been on both sides of the table."
@@ -79,7 +83,7 @@ const schema = {
     <div class="max-w-page mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
       {services.map((s) => (
         
-          href={"/services/" + s.slug}
+          href={s.href}
           class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5 group"
         >
           <div class="w-full overflow-hidden" style="height: 260px;">
