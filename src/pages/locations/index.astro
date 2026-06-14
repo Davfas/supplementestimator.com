@@ -39,18 +39,37 @@ const schema = {
   canonical="https://supplementestimator.com/locations"
   schema={schema}
 >
-  <section class="px-5 md:px-8 pt-32 pb-20 bg-secondary relative overflow-hidden">
-    <div class="hero-glow absolute inset-0 pointer-events-none"></div>
-    <div class="max-w-page mx-auto text-center relative z-10">
+
+  <!-- Hero with full-screen parallax + frosted glass -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- Background image -->
+    <div
+      class="absolute inset-0"
+      style="background-image: url('/Firefly_USA.png'); background-attachment: fixed; background-size: cover; background-position: center;"
+    ></div>
+
+    <!-- Frosted glass card -->
+    <div class="relative z-10 mx-4 md:mx-auto max-w-2xl w-full text-center px-10 py-14 rounded-2xl"
+      style="background: rgba(12, 25, 38, 0.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1);">
+
       <div class="inline-flex items-center gap-2 bg-surface border border-accent/20 rounded-full px-4 py-1.5 text-accent text-sm font-medium mb-6">
         <i class="ti ti-map-pin"></i> Nationwide Service
       </div>
       <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
         Serving Contractors Across the United States
       </h1>
-      <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto">
+      <p class="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto mb-8">
         Precision Estimating works 100% remotely. No matter where your jobs are, we can write estimates, handle supplements, and negotiate with carriers on your behalf.
       </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+16057602228" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+          <i class="ti ti-phone"></i> Call Now
+        </a>
+        <a href="mailto:dave@supplementestimator.com" class="inline-flex items-center justify-center gap-2 bg-surface border border-accent/20 hover:border-accent/50 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+          <i class="ti ti-mail"></i> Email Us
+        </a>
+      </div>
     </div>
   </section>
 
