@@ -6,32 +6,39 @@ const services = [
   {
     slug: "xactimate-estimate-writing",
     image: "/firefly-xactimate-hands.png",
-    accent: "#3B82F6",
     title: "Xactimate Estimate Writing",
     description: "Carrier-ready Xactimate estimates written by a certified professional and former licensed adjuster. Accurate scope, correct pricing, fast turnaround."
   },
   {
     slug: "supplement-writing",
     image: "/firefly-dual-monitor.png",
-    accent: "#14B8A6",
     title: "Supplement Writing",
     description: "We audit carrier estimates, identify every missed or underpaid line item, and write complete supplements that recover money you're already owed."
   },
   {
     slug: "carrier-negotiations",
     image: "/firefly-claim-approved.png",
-    accent: "#3B82F6",
     title: "Carrier Negotiations",
     description: "We negotiate directly with insurance carriers on your behalf — backed by a former adjuster who knows exactly how to document and argue a claim."
   },
   {
     slug: "consulting-training",
     image: "/firefly-training.png",
-    accent: "#14B8A6",
     title: "Consulting & Training",
     description: "Improve your in-house claims process with Xactimate training and expert consulting from someone who has been on both sides of the table."
   }
 ];
+
+const schemaItems = services.map((s, i) => ({
+  "@type": "Offer",
+  "position": i + 1,
+  "itemOffered": {
+    "@type": "Service",
+    "name": s.title,
+    "description": s.description,
+    "url": "https://supplementestimator.com/services/" + s.slug
+  }
+}));
 
 const schema = {
   "@context": "https://schema.org",
@@ -42,16 +49,7 @@ const schema = {
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Insurance Estimating Services",
-    "itemListElement": services.map((s, i) => ({
-      "@type": "Offer",
-      "position": i + 1,
-      "itemOffered": {
-        "@type": "Service",
-        "name": s.title,
-        "description": s.description,
-        "url": `https://supplementestimator.com/services/${s.slug}`
-      }
-    }))
+    "itemListElement": schemaItems
   }
 };
 ---
