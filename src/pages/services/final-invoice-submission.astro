@@ -1,0 +1,48 @@
+---
+import ServicePage from '../../components/ServicePage.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Final Invoice Submission",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Precision Estimating and Supplements",
+    "url": "https://supplementestimator.com"
+  },
+  "description": "Professional final invoice preparation and submission for roofing, general contractors, and restoration companies. We handle documentation and follow up until payment clears.",
+  "url": "https://supplementestimator.com/services/final-invoice-submission",
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "serviceType": "Final Invoice Submission"
+};
+
+const benefits = [
+  { icon: "ti-receipt", title: "Complete Invoice Preparation", body: "We prepare fully documented final invoices that match the approved scope, making it easy for carriers to process payment quickly." },
+  { icon: "ti-shield-check", title: "Carrier-Ready Documentation", body: "Every invoice includes the required supporting documentation, line item breakdown, and references to the approved estimate." },
+  { icon: "ti-clock", title: "Fast Turnaround", body: "We deliver completed invoice packages quickly so you're not waiting on paperwork to close out jobs and get paid." },
+  { icon: "ti-messages", title: "Follow-Up Until Paid", body: "We don't just submit and walk away. We follow up with the carrier until payment is confirmed and released." },
+  { icon: "ti-eye-off", title: "White Label Available", body: "We work under your brand. Your clients and carriers see only you — we handle everything behind the scenes." },
+  { icon: "ti-trending-up", title: "Close Jobs Faster", body: "Proper invoice submission means fewer delays, fewer carrier questions, and faster payment for your crew." }
+];
+
+const faqs = [
+  { q: "What is a final invoice submission?", a: "After restoration work is complete, a final invoice is submitted to the insurance carrier documenting all completed work and requesting final payment. Proper documentation is critical to avoid delays or denials." },
+  { q: "What do I need to provide?", a: "We need the approved insurance estimate, your completion documentation, any supplemental approvals, and photos of the completed work. We handle the rest." },
+  { q: "What if the carrier disputes the final invoice?", a: "We handle carrier pushback as part of the process. With our documentation standards, disputes are rare — but when they happen, we know how to respond effectively." },
+  { q: "How long does invoice submission take?", a: "We typically prepare and submit final invoices within 24 hours of receiving all required documentation from you." },
+  { q: "Do you handle both residential and commercial invoices?", a: "Yes. We handle final invoice submission for residential and commercial roofing, general contracting, and full restoration projects across all 50 states." }
+];
+---
+
+<ServicePage
+  title="Final Invoice Submission for Contractors | Precision Estimating"
+  description="Professional final invoice preparation and submission for roofing, GC, and restoration contractors. We document, submit, and follow up until payment clears. Nationwide."
+  canonical="https://supplementestimator.com/services/final-invoice-submission"
+  headline="Final Invoice Submission That Gets You Paid"
+  subheadline="Don't let sloppy paperwork delay your final payment. We prepare, submit, and follow up on final invoices until the check clears."
+  icon="ti-receipt"
+  image="/firefly-acme-invoice.png"
+  benefits={benefits}
+  faqs={faqs}
+  schema={schema}
+/>
