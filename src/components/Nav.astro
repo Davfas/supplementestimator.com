@@ -7,6 +7,24 @@ const services = [
   { href: '/services/consulting-training', label: 'Consulting & Training' },
   { href: '/services/white-label-services', label: 'Fully White Labeled' },
 ];
+
+const locations = [
+  { href: '/locations/minnesota', label: 'Minnesota' },
+  { href: '/locations/colorado', label: 'Colorado' },
+  { href: '/locations/south-dakota', label: 'South Dakota' },
+  { href: '/locations/wisconsin', label: 'Wisconsin' },
+  { href: '/locations/wyoming', label: 'Wyoming' },
+  { href: '/locations/florida', label: 'Florida' },
+  { href: '/locations/arizona', label: 'Arizona' },
+  { href: '/locations/nebraska', label: 'Nebraska' },
+  { href: '/locations/iowa', label: 'Iowa' },
+  { href: '/locations/missouri', label: 'Missouri' },
+  { href: '/locations/alaska', label: 'Alaska' },
+  { href: '/locations/connecticut', label: 'Connecticut' },
+  { href: '/locations/kentucky', label: 'Kentucky' },
+  { href: '/locations/rhode-island', label: 'Rhode Island' },
+  { href: '/locations/utah', label: 'Utah' },
+];
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 px-5 md:px-8 py-4 flex items-center justify-between bg-primary/90 backdrop-blur-md border-b border-accent/15">
@@ -35,8 +53,26 @@ const services = [
         </ul>
       </div>
     </li>
-    <li>
-      <a href="/locations" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">Locations</a>
+    <li class="relative group">
+      <a href="/locations" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline flex items-center gap-1">
+        Locations <span class="text-xs">▾</span>
+      </a>
+      <div class="absolute top-full left-0 mt-2 w-48 bg-primary border border-accent/20 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <ul class="list-none m-0 p-2">
+          {locations.map((l) => (
+            <li>
+              <a href={l.href} class="block px-4 py-2.5 text-slate-400 hover:text-white hover:bg-accent/10 rounded-lg text-sm font-medium transition-colors no-underline">
+                {l.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/locations" class="block px-4 py-2.5 text-accent-teal hover:text-white hover:bg-accent/10 rounded-lg text-sm font-semibold transition-colors no-underline border-t border-accent/10 mt-1 pt-3">
+              View All States →
+            </a>
+          </li>
+        </ul>
+      </div>
     </li>
     <li>
       <a href="#process" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">Process</a>
@@ -84,8 +120,22 @@ const services = [
         ))}
       </ul>
     </li>
-    <li>
-      <a href="/locations" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">Locations</a>
+    <li class="py-1">
+      <div class="text-xs font-semibold uppercase tracking-widest text-accent-teal mb-2">Locations</div>
+      <ul class="list-none m-0 p-0 flex flex-col gap-1">
+        {locations.map((l) => (
+          <li>
+            <a href={l.href} class="block py-2 pl-3 text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline border-l border-accent/20">
+              {l.label}
+            </a>
+          </li>
+        ))}
+        <li>
+          <a href="/locations" class="block py-2 pl-3 text-accent-teal text-sm font-semibold transition-colors no-underline border-l border-accent-teal/40">
+            View All States →
+          </a>
+        </li>
+      </ul>
     </li>
     <li>
       <a href="#process" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">Process</a>
