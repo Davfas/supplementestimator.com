@@ -1,64 +1,132 @@
 ---
+const services = [
+  { href: '/services/xactimate-estimate-writing', label: 'Xactimate Estimate Writing' },
+  { href: '/services/supplement-writing', label: 'Supplement Writing' },
+  { href: '/services/carrier-negotiations', label: 'Carrier Negotiations' },
+  { href: '/services/final-invoice-submission', label: 'Final Invoice Submission' },
+  { href: '/services/consulting-training', label: 'Consulting & Training' },
+  { href: '/services/white-label-services', label: 'Fully White Labeled' },
+];
 ---
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
 <nav class="fixed top-0 left-0 right-0 z-50 px-5 md:px-8 py-4 flex items-center justify-between bg-primary/90 backdrop-blur-md border-b border-accent/15">
+
+  <!-- Logo -->
   <a href="/" class="flex items-center gap-3 no-underline">
     <img src="/precision-icon.png" alt="Precision Estimating and Supplements" class="h-16 w-auto" />
   </a>
 
-  <ul class="hidden md:flex gap-8 items-center list-none m-0 p-0">
+  <!-- Center nav -->
+  <ul class="hidden md:flex gap-8 items-center list-none m-0 p-0 absolute left-1/2 -translate-x-1/2">
+
+    <li>
+      <a href="/" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
+        Home
+      </a>
+    </li>
+
+    <!-- Services dropdown -->
     <li class="relative group">
       <a href="/services" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline flex items-center gap-1">
-        Services <i class="ti ti-chevron-down text-xs"></i>
+        Services <span class="text-xs">▾</span>
       </a>
-      <div class="absolute top-full left-0 mt-2 w-56 bg-primary border border-accent/20 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-        <a href="/services/xactimate-estimate-writing" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface rounded-t-xl transition-colors no-underline">Xactimate Estimate Writing</a>
-        <a href="/services/supplement-writing" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Supplement Writing</a>
-        <a href="/services/carrier-negotiations" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Carrier Negotiations</a>
-        <a href="/services/consulting-training" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface rounded-b-xl transition-colors no-underline">Consulting and Training</a>
+      <div class="absolute top-full left-0 mt-2 w-64 bg-primary border border-accent/20 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <ul class="list-none m-0 p-2">
+          {services.map((s) => (
+            <li>
+              <a href={s.href} class="block px-4 py-2.5 text-slate-400 hover:text-white hover:bg-accent/10 rounded-lg text-sm font-medium transition-colors no-underline">
+                {s.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </li>
-    <li class="relative group">
-      <a href="/locations" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline flex items-center gap-1">
-        Locations <i class="ti ti-chevron-down text-xs"></i>
+
+    <li>
+      <a href="/locations" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
+        Locations
       </a>
-      <div class="absolute top-full left-0 mt-2 w-48 bg-primary border border-accent/20 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-        <a href="/locations/minnesota" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface rounded-t-xl transition-colors no-underline">Minnesota</a>
-        <a href="/locations/colorado" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Colorado</a>
-        <a href="/locations/florida" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Florida</a>
-        <a href="/locations/south-dakota" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">South Dakota</a>
-        <a href="/locations/wisconsin" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Wisconsin</a>
-        <a href="/locations/arizona" class="block px-4 py-3 text-sm text-slate-400 hover:text-white hover:bg-surface transition-colors no-underline">Arizona</a>
-        <a href="/locations" class="block px-4 py-3 text-sm text-accent hover:text-white hover:bg-surface rounded-b-xl transition-colors no-underline font-medium">View All States</a>
-      </div>
     </li>
-    <li><a href="/#process" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">Process</a></li>
-    <li><a href="/#about" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">About</a></li>
-    <li><a href="/#contact" class="bg-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-colors no-underline">Get Started</a></li>
+
+    <li>
+      <a href="#process" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
+        Process
+      </a>
+    </li>
+
+    <li>
+      <a href="#about" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
+        About
+      </a>
+    </li>
+
   </ul>
 
-  <button id="mobile-menu-btn" type="button" class="md:hidden bg-transparent border-0 text-white text-2xl cursor-pointer p-1 leading-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+  <!-- CTA button -->
+  
+    href="#contact"
+    class="hidden md:inline-block bg-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-colors no-underline"
+  >
+    Get Started
+  </a>
+
+  <!-- Mobile hamburger -->
+  <button
+    id="mobile-menu-btn"
+    type="button"
+    class="md:hidden bg-transparent border-0 text-white text-2xl cursor-pointer p-1 leading-none"
+    aria-label="Toggle navigation menu"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
     <span id="mobile-menu-icon" aria-hidden="true">☰</span>
   </button>
 </nav>
 
-<div id="mobile-menu" class="hidden md:hidden fixed top-[68px] left-0 right-0 z-40 bg-primary/95 backdrop-blur-md border-b border-accent/15 overflow-y-auto max-h-[80vh]">
+<!-- Mobile menu panel -->
+<div
+  id="mobile-menu"
+  class="hidden md:hidden fixed top-[68px] left-0 right-0 z-40 bg-primary/95 backdrop-blur-md border-b border-accent/15"
+>
   <ul class="flex flex-col gap-1 p-6 m-0 list-none">
-    <li class="text-xs font-semibold tracking-widest uppercase text-slate-500 pt-2 pb-1">Services</li>
-    <li><a href="/services/xactimate-estimate-writing" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Xactimate Estimate Writing</a></li>
-    <li><a href="/services/supplement-writing" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Supplement Writing</a></li>
-    <li><a href="/services/carrier-negotiations" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Carrier Negotiations</a></li>
-    <li><a href="/services/consulting-training" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Consulting and Training</a></li>
-    <li class="text-xs font-semibold tracking-widest uppercase text-slate-500 pt-4 pb-1">Locations</li>
-    <li><a href="/locations/minnesota" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Minnesota</a></li>
-    <li><a href="/locations/colorado" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Colorado</a></li>
-    <li><a href="/locations/florida" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Florida</a></li>
-    <li><a href="/locations" class="block py-2 text-accent text-base font-medium transition-colors no-underline">View All States</a></li>
-    <li class="text-xs font-semibold tracking-widest uppercase text-slate-500 pt-4 pb-1">More</li>
-    <li><a href="/#process" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">Process</a></li>
-    <li><a href="/#about" class="block py-2 text-slate-400 hover:text-white text-base transition-colors no-underline">About</a></li>
-    <li><a href="/#contact" class="block mt-2 bg-accent hover:bg-blue-600 text-white px-6 py-3 rounded-md font-semibold text-center transition-colors no-underline">Get Started</a></li>
+    <li>
+      <a href="/" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
+        Home
+      </a>
+    </li>
+    <li class="py-1">
+      <div class="text-xs font-semibold uppercase tracking-widest text-accent-teal mb-2">Services</div>
+      <ul class="list-none m-0 p-0 flex flex-col gap-1">
+        {services.map((s) => (
+          <li>
+            <a href={s.href} class="block py-2 pl-3 text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline border-l border-accent/20">
+              {s.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </li>
+    <li>
+      <a href="/locations" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
+        Locations
+      </a>
+    </li>
+    <li>
+      <a href="#process" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
+        Process
+      </a>
+    </li>
+    <li>
+      <a href="#about" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
+        About
+      </a>
+    </li>
+    <li>
+      <a href="#contact" class="block mt-2 bg-accent hover:bg-blue-600 text-white px-6 py-3 rounded-md font-semibold text-center transition-colors no-underline">
+        Get Started
+      </a>
+    </li>
   </ul>
 </div>
 
@@ -66,16 +134,19 @@
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   const icon = document.getElementById('mobile-menu-icon');
-  function setOpen(open) {
+
+  function setOpen(open: boolean) {
     if (!btn || !menu || !icon) return;
     menu.classList.toggle('hidden', !open);
     btn.setAttribute('aria-expanded', String(open));
-    icon.textContent = open ? 'x' : '☰';
+    icon.textContent = open ? '✕' : '☰';
   }
+
   btn?.addEventListener('click', () => {
     const isHidden = menu?.classList.contains('hidden') ?? true;
     setOpen(isHidden);
   });
+
   menu?.querySelectorAll('a').forEach((a) => {
     a.addEventListener('click', () => setOpen(false));
   });
