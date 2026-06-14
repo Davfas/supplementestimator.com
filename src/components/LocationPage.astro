@@ -40,25 +40,29 @@ const schema = {
 
 const services = [
   {
-    icon: "ti-file-description",
+    image: "/firefly-xactimate-hands.png",
+    accent: "#3B82F6",
     title: "Xactimate Estimate Writing",
     body: `We write carrier-ready Xactimate estimates for ${state} contractors. Accurate, fully documented, and priced correctly from the start.`,
     href: "/services/xactimate-estimate-writing"
   },
   {
-    icon: "ti-file-plus",
+    image: "/firefly-dual-monitor.png",
+    accent: "#14B8A6",
     title: "Supplement Writing",
     body: `Carriers in ${state} routinely underpay. We identify every missed line item and recover the money your ${state} claims deserve.`,
     href: "/services/supplement-writing"
   },
   {
-    icon: "ti-gavel",
+    image: "/firefly-claim-approved.png",
+    accent: "#3B82F6",
     title: "Carrier Negotiations",
     body: `We negotiate directly with carriers on behalf of ${state} contractors — backed by a former licensed adjuster who knows their playbook.`,
     href: "/services/carrier-negotiations"
   },
   {
-    icon: "ti-school",
+    image: "/firefly-training.png",
+    accent: "#14B8A6",
     title: "Consulting & Training",
     body: `Want to improve your in-house claims process in ${state}? We offer Xactimate training and consulting for contractors at every experience level.`,
     href: "/services/consulting-training"
@@ -68,11 +72,9 @@ const services = [
 
 <Layout title={title} description={description} canonical={canonical} schema={schema}>
 
-  <!-- Hero with full-screen parallax background -->
-  <section
-    class="relative min-h-screen flex items-center justify-center overflow-hidden"
-  >
-    <!-- Background image - no overlay -->
+  <!-- Hero with full-screen parallax + frosted glass -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+
     {image ? (
       <div
         class="absolute inset-0"
@@ -82,10 +84,9 @@ const services = [
       <div class="absolute inset-0 bg-secondary"></div>
     )}
 
-    <!-- Frosted glass card -->
     <div class="relative z-10 mx-4 md:mx-auto max-w-2xl w-full text-center px-10 py-14 rounded-2xl"
       style="background: rgba(12, 25, 38, 0.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1);">
-      
+
       <div class="inline-flex items-center gap-2 bg-surface border border-accent/20 rounded-full px-4 py-1.5 text-accent text-sm font-medium mb-6">
         <i class="ti ti-map-pin"></i> Serving {state} Contractors
       </div>
@@ -136,12 +137,27 @@ const services = [
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services.map((s) => (
-          <a href={s.href} class="bg-surface border border-accent/15 hover:border-accent/40 rounded-2xl p-6 transition-colors group">
-            <div class="w-10 h-10 bg-primary border border-accent/20 rounded-lg flex items-center justify-center mb-4">
-              <i class={`ti ${s.icon}`} style="font-size: 1.2rem; color: #14B8A6;"></i>
+          
+            href={s.href}
+            class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5 group"
+          >
+            <div class="w-full overflow-hidden" style="height: 260px;">
+              <img
+                src={s.image}
+                alt={s.title}
+                class="w-full h-full object-cover object-center"
+              />
             </div>
-            <h3 class="font-heading text-lg font-semibold text-white mb-2 group-hover:text-accent transition-colors">{s.title}</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">{s.body}</p>
+            <div class="h-1 w-full" style={`background: ${s.accent};`}></div>
+            <div class="p-8">
+              <h3 class="font-heading text-[1.25rem] font-bold text-white mb-3 group-hover:text-accent-teal transition-colors">
+                {s.title}
+              </h3>
+              <p class="text-slate-400 text-[0.95rem] leading-[1.65]">{s.body}</p>
+              <div class="mt-6 text-accent-teal text-sm font-semibold flex items-center gap-1">
+                Learn more <i class="ti ti-arrow-right"></i>
+              </div>
+            </div>
           </a>
         ))}
       </div>
