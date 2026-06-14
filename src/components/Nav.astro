@@ -11,21 +11,14 @@ const services = [
 
 <nav class="fixed top-0 left-0 right-0 z-50 px-5 md:px-8 py-4 flex items-center justify-between bg-primary/90 backdrop-blur-md border-b border-accent/15">
 
-  <!-- Logo -->
   <a href="/" class="flex items-center gap-3 no-underline">
     <img src="/precision-icon.png" alt="Precision Estimating and Supplements" class="h-16 w-auto" />
   </a>
 
-  <!-- Center nav -->
   <ul class="hidden md:flex gap-8 items-center list-none m-0 p-0 absolute left-1/2 -translate-x-1/2">
-
     <li>
-      <a href="/" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
-        Home
-      </a>
+      <a href="/" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">Home</a>
     </li>
-
-    <!-- Services dropdown -->
     <li class="relative group">
       <a href="/services" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline flex items-center gap-1">
         Services <span class="text-xs">▾</span>
@@ -42,36 +35,23 @@ const services = [
         </ul>
       </div>
     </li>
-
     <li>
-      <a href="/locations" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
-        Locations
-      </a>
+      <a href="/locations" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">Locations</a>
     </li>
-
     <li>
-      <a href="#process" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
-        Process
-      </a>
+      <a href="#process" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">Process</a>
     </li>
-
     <li>
-      <a href="#about" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">
-        About
-      </a>
+      <a href="#about" class="text-slate-400 hover:text-white text-sm font-medium transition-colors no-underline">About</a>
     </li>
-
   </ul>
 
-  <!-- CTA button -->
-  
-    href="#contact"
-    class="hidden md:inline-block bg-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-colors no-underline"
-  >
-    Get Started
-  </a>
+  <div class="hidden md:block">
+    <a href="#contact" class="bg-accent hover:bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-colors no-underline">
+      Get Started
+    </a>
+  </div>
 
-  <!-- Mobile hamburger -->
   <button
     id="mobile-menu-btn"
     type="button"
@@ -84,16 +64,13 @@ const services = [
   </button>
 </nav>
 
-<!-- Mobile menu panel -->
 <div
   id="mobile-menu"
   class="hidden md:hidden fixed top-[68px] left-0 right-0 z-40 bg-primary/95 backdrop-blur-md border-b border-accent/15"
 >
   <ul class="flex flex-col gap-1 p-6 m-0 list-none">
     <li>
-      <a href="/" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
-        Home
-      </a>
+      <a href="/" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">Home</a>
     </li>
     <li class="py-1">
       <div class="text-xs font-semibold uppercase tracking-widest text-accent-teal mb-2">Services</div>
@@ -108,19 +85,13 @@ const services = [
       </ul>
     </li>
     <li>
-      <a href="/locations" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
-        Locations
-      </a>
+      <a href="/locations" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">Locations</a>
     </li>
     <li>
-      <a href="#process" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
-        Process
-      </a>
+      <a href="#process" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">Process</a>
     </li>
     <li>
-      <a href="#about" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">
-        About
-      </a>
+      <a href="#about" class="block py-3 text-slate-400 hover:text-white text-base font-medium transition-colors no-underline">About</a>
     </li>
     <li>
       <a href="#contact" class="block mt-2 bg-accent hover:bg-blue-600 text-white px-6 py-3 rounded-md font-semibold text-center transition-colors no-underline">
