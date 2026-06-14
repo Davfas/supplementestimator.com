@@ -47,14 +47,14 @@ const steps = [
   ></div>
 
   <!-- Dark overlay for readability -->
-  <div class="absolute inset-0" style="background: linear-gradient(to bottom, #0C192633, #162A3E33);"></div>
+  <div class="absolute inset-0" style="background: linear-gradient(to bottom, #0C192666, #162A3E88);"></div>
 
   <div class="max-w-page mx-auto relative z-10">
     <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">How It Works</div>
     <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] text-white mb-4 max-w-[600px]">
       Five steps. You stay on the roof.
     </h2>
-    <p class="text-slate-400 text-[1.05rem] max-w-[550px] mb-14 leading-[1.7]">
+    <p class="text-slate-300 text-[1.05rem] max-w-[550px] mb-14 leading-[1.7]">
       We built our process to take work off your plate, not add to it.
     </p>
 
@@ -62,15 +62,15 @@ const steps = [
       {steps.map((s, i) => (
         <li class="relative flex flex-row lg:flex-col items-start lg:items-center gap-4 lg:gap-0 text-left lg:text-center py-4 lg:py-0">
           {i < steps.length - 1 && (
-            <div class="hidden lg:block absolute top-[28px] left-[calc(50%+28px)] right-[calc(-50%+28px)] h-px bg-accent/20 z-0"></div>
+            <div class="hidden lg:block absolute top-[28px] left-[calc(50%+28px)] right-[calc(-50%+28px)] h-px bg-accent/30 z-0"></div>
           )}
-          <div class="relative z-10 w-14 h-14 rounded-full bg-primary border-2 border-accent/30 flex items-center justify-center mb-0 lg:mb-5 shrink-0 lg:shrink">
+          <div class="relative z-10 w-14 h-14 rounded-full border-2 border-accent/50 flex items-center justify-center mb-0 lg:mb-5 shrink-0 lg:shrink" style="background: rgba(12,25,38,0.85);">
             <i class={`ti ${s.icon}`} style="font-size: 1.3rem; color: #3B82F6;" aria-hidden="true"></i>
           </div>
-          <div>
-            <div class="font-heading text-[0.7rem] font-bold text-accent/50 uppercase tracking-[0.12em] mb-1">{s.n}</div>
-            <h4 class="font-heading text-base font-bold text-white mb-2">{s.title}</h4>
-            <p class="text-slate-400 text-[0.85rem] leading-[1.6]">{s.body}</p>
+          <div class="rounded-xl p-4 lg:p-5" style="background: rgba(12,25,38,0.75); backdrop-filter: blur(4px);">
+            <div class="font-heading text-[0.7rem] font-bold text-accent-teal uppercase tracking-[0.12em] mb-1">{s.n}</div>
+            <h4 class="font-heading text-base font-extrabold text-white mb-2">{s.title}</h4>
+            <p class="text-slate-300 text-[0.85rem] leading-[1.6]">{s.body}</p>
           </div>
         </li>
       ))}
