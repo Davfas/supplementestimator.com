@@ -2,57 +2,71 @@
 const services = [
   {
     icon: 'ti-file-text',
-    gradient: 'linear-gradient(135deg, #1d4ed8 0%, #06b6d4 100%)',
-    accentColor: '#38bdf8',
-    hoverBorder: 'rgba(56,189,248,0.35)',
+    accent: '#3B82F6',
     title: 'Xactimate Estimate Writing',
     body: "Accurate, detailed, code-compliant estimates built in Xactimate with local pricing. Ready for carrier submission or client review. We don't miss line items.",
-    href: '/services/xactimate-estimate-writing',
+    image: '/firefly-xactimate-hands.png',
   },
   {
-    icon: 'ti-zoom-money',
-    gradient: 'linear-gradient(135deg, #0f766e 0%, #3b82f6 100%)',
-    accentColor: '#14b8a6',
-    hoverBorder: 'rgba(20,184,166,0.35)',
+    icon: 'ti-search',
+    accent: '#14B8A6',
     title: 'Supplement Writing',
     body: "We tear apart the carrier's scope line by line. Missing materials, underpaid labor, code upgrades, overlooked damage. If it belongs on the claim, we find it.",
-    href: '/services/supplement-writing',
+    image: '/firefly-dual-monitor.png',
   },
   {
-    icon: 'ti-phone-call',
-    gradient: 'linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%)',
-    accentColor: '#818cf8',
-    hoverBorder: 'rgba(129,140,248,0.35)',
+    icon: 'ti-messages',
+    accent: '#3B82F6',
     title: 'Carrier Negotiations',
     body: "We go back and forth with the adjuster so you don't have to. Documentation, follow-ups, pushback. We know what gets approved.",
-    href: '/services/carrier-negotiations',
+    image: '/firefly-claim-approved.png',
   },
   {
     icon: 'ti-receipt',
-    gradient: 'linear-gradient(135deg, #0369a1 0%, #14b8a6 100%)',
-    accentColor: '#38bdf8',
-    hoverBorder: 'rgba(56,189,248,0.35)',
+    accent: '#14B8A6',
     title: 'Final Invoice Submission',
     body: 'After the work is done, we prepare and submit the final invoice, handle documentation requests, and follow up until the payment clears.',
-    href: '/services/xactimate-estimate-writing',
+    image: '/firefly-acme-invoice.png',
   },
   {
     icon: 'ti-school',
-    gradient: 'linear-gradient(135deg, #1e40af 0%, #7c3aed 100%)',
-    accentColor: '#a78bfa',
-    hoverBorder: 'rgba(167,139,250,0.35)',
+    accent: '#3B82F6',
     title: 'Consulting & Training',
     body: 'Want your team to handle supplements in-house? We train your people on Xactimate, supplement strategy, and what to look for on every claim.',
-    href: '/services/consulting-training',
+    image: '/firefly-training.png',
   },
   {
-    icon: 'ti-eye-off',
-    gradient: 'linear-gradient(135deg, #0f766e 0%, #1d4ed8 100%)',
-    accentColor: '#14b8a6',
-    hoverBorder: 'rgba(20,184,166,0.35)',
+    icon: 'ti-shield-check',
+    accent: '#14B8A6',
     title: 'Fully White Labeled',
     body: "We work inside your CRM, from your email, under your name. To the carrier, we're your employee. Your brand stays front and center.",
-    href: '/services/xactimate-estimate-writing',
+    svg: `<svg viewBox="0 0 300 160" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <rect width="300" height="160" fill="#0d1f30" rx="8"/>
+      <rect x="20" y="20" width="120" height="50" rx="6" fill="#162a3e" stroke="#3b82f6" stroke-width="1"/>
+      <text x="35" y="35" fill="#475569" font-size="6" font-family="sans-serif">From: claims@yourcompany.com</text>
+      <text x="35" y="45" fill="#475569" font-size="6" font-family="sans-serif">To: adjuster@carrier.com</text>
+      <text x="35" y="55" fill="#cbd5e1" font-size="6" font-family="sans-serif" font-weight="600">Re: Supplement #2024-1187</text>
+      <text x="35" y="64" fill="#94a3b8" font-size="6" font-family="sans-serif">Please find attached our...</text>
+      <rect x="20" y="85" width="120" height="55" rx="6" fill="#162a3e" stroke="#3b82f6" stroke-width="1"/>
+      <rect x="28" y="93" width="60" height="8" rx="2" fill="#1e3a52"/>
+      <text x="58" y="100" text-anchor="middle" fill="#3b82f6" font-size="7" font-family="sans-serif" font-weight="600">YOUR COMPANY</text>
+      <text x="35" y="112" fill="#475569" font-size="6" font-family="sans-serif">JobNimbus · AccuLynx</text>
+      <text x="35" y="121" fill="#475569" font-size="6" font-family="sans-serif">CompanyCam · Any CRM</text>
+      <text x="35" y="131" fill="#14b8a6" font-size="6" font-family="sans-serif">We work inside it</text>
+      <rect x="160" y="20" width="120" height="120" rx="6" fill="#0d2a1e" stroke="#14b8a6" stroke-width="1" stroke-dasharray="4,2"/>
+      <text x="220" y="38" text-anchor="middle" fill="#14b8a6" font-size="7" font-family="sans-serif" font-weight="600">Precision (invisible)</text>
+      <rect x="170" y="45" width="100" height="25" rx="4" fill="#071a10"/>
+      <text x="220" y="56" text-anchor="middle" fill="#475569" font-size="6" font-family="sans-serif">Writing estimates</text>
+      <text x="220" y="65" text-anchor="middle" fill="#475569" font-size="6" font-family="sans-serif">Building supplements</text>
+      <rect x="170" y="75" width="100" height="25" rx="4" fill="#071a10"/>
+      <text x="220" y="86" text-anchor="middle" fill="#475569" font-size="6" font-family="sans-serif">Carrier communication</text>
+      <text x="220" y="95" text-anchor="middle" fill="#475569" font-size="6" font-family="sans-serif">Under your email</text>
+      <rect x="170" y="105" width="100" height="25" rx="4" fill="#071a10"/>
+      <text x="220" y="116" text-anchor="middle" fill="#475569" font-size="6" font-family="sans-serif">Your branding</text>
+      <text x="220" y="125" text-anchor="middle" fill="#475569" font-size="6" font-family="sans-serif">on every document</text>
+      <rect x="170" y="133" width="100" height="1" fill="#14b8a6" opacity="0.3"/>
+      <text x="220" y="146" text-anchor="middle" fill="#14b8a6" font-size="7" font-family="sans-serif" font-weight="600">Carrier sees: YOU</text>
+    </svg>`,
   },
 ];
 ---
@@ -60,7 +74,6 @@ const services = [
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
 <section id="services" class="px-5 md:px-8 py-24 max-w-page mx-auto">
-
   <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">What We Do</div>
   <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] text-white mb-4 max-w-[600px]">
     Every stage of the claim, handled.
@@ -69,120 +82,33 @@ const services = [
     From the initial estimate to the final invoice, we handle the paperwork so you can stay on the job site.
   </p>
 
-  <div class="svc-grid">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     {services.map((s) => (
-      <article
-        class="svc-card"
-        style={`--hover-border: ${s.hoverBorder};`}
-      >
-        <div class="svc-banner" style={`background: ${s.gradient};`}>
-          <i class={`ti ${s.icon}`} aria-hidden="true"></i>
-        </div>
-        <div class="svc-content">
-          <h3 class="svc-title">{s.title}</h3>
-          <p class="svc-body">{s.body}</p>
-          <a href={s.href} class="svc-link" style={`color: ${s.accentColor};`}>
-            Learn more <i class="ti ti-arrow-right" aria-hidden="true"></i>
-          </a>
+      <article class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5">
+        {s.image ? (
+          <div class="w-full overflow-hidden" style="max-height: 220px;">
+            <img
+              src={s.image}
+              alt={s.title}
+              class="w-full object-cover object-center"
+              style="height: 220px;"
+            />
+          </div>
+        ) : (
+          <div class="w-full overflow-hidden" set:html={s.svg} />
+        )}
+        <div class="h-1 w-full" style={`background: ${s.accent};`}></div>
+        <div class="p-8">
+          <div
+            class="w-12 h-12 rounded-[10px] flex items-center justify-center mb-6"
+            style={`background: ${s.accent}18; border: 1px solid ${s.accent}30;`}
+          >
+            <i class={`ti ${s.icon}`} style={`font-size: 1.4rem; color: ${s.accent};`} aria-hidden="true"></i>
+          </div>
+          <h3 class="font-heading text-[1.25rem] font-bold text-white mb-3">{s.title}</h3>
+          <p class="text-slate-400 text-[0.95rem] leading-[1.65]">{s.body}</p>
         </div>
       </article>
     ))}
   </div>
-
 </section>
-
-<style>
-  .svc-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-
-  @media (max-width: 1024px) {
-    .svc-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .svc-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .svc-card {
-    background: #111e2d;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.25s ease, border-color 0.25s ease;
-  }
-
-  .svc-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--hover-border);
-  }
-
-  .svc-banner {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .svc-banner .ti {
-    font-size: 2.4rem;
-    color: #ffffff;
-  }
-
-  .svc-content {
-    padding: 1.5rem 1.5rem 1.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    flex: 1;
-  }
-
-  .svc-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #f1f5f9;
-    line-height: 1.3;
-    margin: 0;
-  }
-
-  .svc-body {
-    font-size: 0.925rem;
-    color: #94a3b8;
-    line-height: 1.7;
-    margin: 0;
-    flex: 1;
-  }
-
-  .svc-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 0.25rem;
-    transition: gap 0.2s ease;
-  }
-
-  .svc-link:hover {
-    gap: 0.55rem;
-  }
-
-  .svc-link .ti {
-    font-size: 1rem;
-    transition: transform 0.2s ease;
-  }
-
-  .svc-link:hover .ti {
-    transform: translateX(2px);
-  }
-</style>
