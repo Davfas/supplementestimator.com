@@ -1,0 +1,48 @@
+---
+import ServicePage from '../../components/ServicePage.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "White Label Estimating Services",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Precision Estimating and Supplements",
+    "url": "https://supplementestimator.com"
+  },
+  "description": "Fully white labeled insurance estimating and supplement services for roofing contractors, GCs, and restoration companies. We work under your brand — invisible to carriers and clients.",
+  "url": "https://supplementestimator.com/services/white-label-services",
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "serviceType": "White Label Estimating Services"
+};
+
+const benefits = [
+  { icon: "ti-shield-check", title: "100% Invisible to Carriers", body: "We communicate with carriers from your email, under your company name. They never know we're involved — to them, we're your in-house team." },
+  { icon: "ti-building", title: "Works in Your CRM", body: "We operate inside your existing workflow — JobNimbus, AccuLynx, CompanyCam, or any other system you use. No disruption to your process." },
+  { icon: "ti-mail", title: "Your Email, Your Brand", body: "All correspondence goes out under your company name and email address. Every document, every estimate, every supplement looks like it came from you." },
+  { icon: "ti-eye-off", title: "Client Confidentiality", body: "Your clients never know you're using an outside service. We protect your relationships and your reputation on every job." },
+  { icon: "ti-users", title: "Scale Without Hiring", body: "Handle more claims without adding staff. We become your dedicated estimating and supplement team — at a fraction of the cost of an employee." },
+  { icon: "ti-trending-up", title: "Grow Your Business", body: "With estimating and supplements handled, your team can focus on sales, production, and customer relationships instead of paperwork." }
+];
+
+const faqs = [
+  { q: "How does white label service work?", a: "We work entirely behind the scenes under your company name. We use your email, your CRM, and your templates. Carriers and clients interact only with your brand — we're invisible." },
+  { q: "Will my clients know I'm using an outside service?", a: "No. Everything we produce is branded to your company. We never communicate directly with your clients or insert our name into any document." },
+  { q: "What CRMs and systems do you work in?", a: "We work in any web-based CRM including JobNimbus, AccuLynx, CompanyCam, Buildertrend, and others. Just give us access and we operate within your existing workflow." },
+  { q: "Is white label available for all your services?", a: "Yes. Every service we offer — estimate writing, supplement writing, carrier negotiations, and invoice submission — is available on a fully white labeled basis." },
+  { q: "How do I get started?", a: "We start with a quick onboarding call to learn your workflow, get system access, and set up communication. Most clients are up and running within 24 hours." }
+];
+---
+
+<ServicePage
+  title="White Label Estimating Services for Contractors | Precision Estimating"
+  description="Fully white labeled insurance estimating and supplement services. We work under your brand — in your CRM, from your email, invisible to carriers and clients. Nationwide."
+  canonical="https://supplementestimator.com/services/white-label-services"
+  headline="Fully White Labeled — We Work Under Your Brand"
+  subheadline="To the carrier, we're your in-house team. We work from your email, inside your CRM, under your name — completely invisible."
+  icon="ti-shield-check"
+  image="/firefly-dual-monitor.png"
+  benefits={benefits}
+  faqs={faqs}
+  schema={schema}
+/>
