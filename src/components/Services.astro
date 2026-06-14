@@ -3,36 +3,42 @@ const services = [
   {
     accent: '#3B82F6',
     title: 'Xactimate Estimate Writing',
+    href: '/services/xactimate-estimate-writing',
     body: "Accurate, detailed, code-compliant estimates built in Xactimate with local pricing. Ready for carrier submission or client review. We don't miss line items.",
     image: '/firefly-xactimate-hands.png',
   },
   {
     accent: '#14B8A6',
     title: 'Supplement Writing',
+    href: '/services/supplement-writing',
     body: "We tear apart the carrier's scope line by line. Missing materials, underpaid labor, code upgrades, overlooked damage. If it belongs on the claim, we find it.",
     image: '/firefly-dual-monitor.png',
   },
   {
     accent: '#3B82F6',
     title: 'Carrier Negotiations',
+    href: '/services/carrier-negotiations',
     body: "We go back and forth with the adjuster so you don't have to. Documentation, follow-ups, pushback. We know what gets approved.",
     image: '/firefly-claim-approved.png',
   },
   {
     accent: '#14B8A6',
     title: 'Final Invoice Submission',
+    href: '/services/consulting-training',
     body: 'After the work is done, we prepare and submit the final invoice, handle documentation requests, and follow up until the payment clears.',
     image: '/firefly-acme-invoice.png',
   },
   {
     accent: '#3B82F6',
     title: 'Consulting & Training',
+    href: '/services/consulting-training',
     body: 'Want your team to handle supplements in-house? We train your people on Xactimate, supplement strategy, and what to look for on every claim.',
     image: '/firefly-training.png',
   },
   {
     accent: '#14B8A6',
     title: 'Fully White Labeled',
+    href: '/services/consulting-training',
     body: "We work inside your CRM, from your email, under your name. To the carrier, we're your employee. Your brand stays front and center.",
     svg: `<svg viewBox="0 0 300 160" width="100%" xmlns="http://www.w3.org/2000/svg">
       <rect width="300" height="160" fill="#0d1f30" rx="8"/>
@@ -78,7 +84,7 @@ const services = [
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     {services.map((s) => (
-      <article class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5">
+      <a href={s.href} class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5">
         {s.image ? (
           <div class="w-full overflow-hidden" style="height: 260px;">
             <img
@@ -95,7 +101,7 @@ const services = [
           <h3 class="font-heading text-[1.25rem] font-bold text-white mb-3">{s.title}</h3>
           <p class="text-slate-400 text-[0.95rem] leading-[1.65]">{s.body}</p>
         </div>
-      </article>
+      </a>
     ))}
   </div>
 </section>
