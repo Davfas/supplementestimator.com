@@ -2,12 +2,57 @@
 import Layout from '../../layouts/Layout.astro';
 import CTA from '../../components/CTA.astro';
 
+const services = [
+  {
+    slug: "xactimate-estimate-writing",
+    image: "/firefly-xactimate-hands.png",
+    accent: "#3B82F6",
+    title: "Xactimate Estimate Writing",
+    description: "Carrier-ready Xactimate estimates written by a certified professional and former licensed adjuster. Accurate scope, correct pricing, fast turnaround."
+  },
+  {
+    slug: "supplement-writing",
+    image: "/firefly-dual-monitor.png",
+    accent: "#14B8A6",
+    title: "Supplement Writing",
+    description: "We audit carrier estimates, identify every missed or underpaid line item, and write complete supplements that recover money you're already owed."
+  },
+  {
+    slug: "carrier-negotiations",
+    image: "/firefly-claim-approved.png",
+    accent: "#3B82F6",
+    title: "Carrier Negotiations",
+    description: "We negotiate directly with insurance carriers on your behalf — backed by a former adjuster who knows exactly how to document and argue a claim."
+  },
+  {
+    slug: "consulting-training",
+    image: "/firefly-training.png",
+    accent: "#14B8A6",
+    title: "Consulting & Training",
+    description: "Improve your in-house claims process with Xactimate training and expert consulting from someone who has been on both sides of the table."
+  }
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Precision Estimating and Supplements",
   "url": "https://supplementestimator.com/services",
-  "description": "Xactimate estimate writing, supplement writing, carrier negotiations, and consulting for contractors nationwide."
+  "description": "Xactimate estimate writing, supplement writing, carrier negotiations, and insurance claims consulting for roofing contractors, GCs, and restoration companies.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Insurance Estimating Services",
+    "itemListElement": services.map((s, i) => ({
+      "@type": "Offer",
+      "position": i + 1,
+      "itemOffered": {
+        "@type": "Service",
+        "name": s.title,
+        "description": s.description,
+        "url": `https://supplementestimator.com/services/${s.slug}`
+      }
+    }))
+  }
 };
 ---
 
@@ -17,7 +62,10 @@ const schema = {
   canonical="https://supplementestimator.com/services"
   schema={schema}
 >
+
+  <!-- Hero -->
   <section class="px-5 md:px-8 pt-32 pb-20 bg-secondary relative overflow-hidden">
+    <div class="hero-glow absolute inset-0 pointer-events-none"></div>
     <div class="max-w-page mx-auto text-center relative z-10">
       <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
         Everything You Need to Get Paid Right
@@ -28,45 +76,33 @@ const schema = {
     </div>
   </section>
 
+  <!-- Service Cards -->
   <section class="px-5 md:px-8 py-20 bg-primary">
     <div class="max-w-page mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-
-      <a href="/services/xactimate-estimate-writing" class="bg-surface border border-accent/15 hover:border-accent/40 rounded-2xl p-8 transition-colors group">
-        <div class="w-12 h-12 bg-primary border border-accent/20 rounded-xl flex items-center justify-center mb-5">
-          <i class="ti ti-file-description" style="font-size: 1.4rem; color: #14B8A6;"></i>
-        </div>
-        <h2 class="font-heading text-2xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Xactimate Estimate Writing</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">Carrier-ready Xactimate estimates written by a certified professional and former licensed adjuster. Accurate scope, correct pricing, fast turnaround.</p>
-        <span class="text-accent text-sm font-semibold">Learn more →</span>
-      </a>
-
-      <a href="/services/supplement-writing" class="bg-surface border border-accent/15 hover:border-accent/40 rounded-2xl p-8 transition-colors group">
-        <div class="w-12 h-12 bg-primary border border-accent/20 rounded-xl flex items-center justify-center mb-5">
-          <i class="ti ti-file-plus" style="font-size: 1.4rem; color: #14B8A6;"></i>
-        </div>
-        <h2 class="font-heading text-2xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Supplement Writing</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">We audit carrier estimates, identify every missed or underpaid line item, and write complete supplements that recover money you're already owed.</p>
-        <span class="text-accent text-sm font-semibold">Learn more →</span>
-      </a>
-
-      <a href="/services/carrier-negotiations" class="bg-surface border border-accent/15 hover:border-accent/40 rounded-2xl p-8 transition-colors group">
-        <div class="w-12 h-12 bg-primary border border-accent/20 rounded-xl flex items-center justify-center mb-5">
-          <i class="ti ti-gavel" style="font-size: 1.4rem; color: #14B8A6;"></i>
-        </div>
-        <h2 class="font-heading text-2xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Carrier Negotiations</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">We negotiate directly with insurance carriers on your behalf — backed by a former adjuster who knows exactly how to document and argue a claim.</p>
-        <span class="text-accent text-sm font-semibold">Learn more →</span>
-      </a>
-
-      <a href="/services/consulting-training" class="bg-surface border border-accent/15 hover:border-accent/40 rounded-2xl p-8 transition-colors group">
-        <div class="w-12 h-12 bg-primary border border-accent/20 rounded-xl flex items-center justify-center mb-5">
-          <i class="ti ti-school" style="font-size: 1.4rem; color: #14B8A6;"></i>
-        </div>
-        <h2 class="font-heading text-2xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Consulting & Training</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">Improve your in-house claims process with Xactimate training and expert consulting from someone who has been on both sides of the table.</p>
-        <span class="text-accent text-sm font-semibold">Learn more →</span>
-      </a>
-
+      {services.map((s) => (
+        
+          href={`/services/${s.slug}`}
+          class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5 group"
+        >
+          <div class="w-full overflow-hidden" style="height: 260px;">
+            <img
+              src={s.image}
+              alt={s.title}
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div class="h-1 w-full bg-accent"></div>
+          <div class="p-8">
+            <h2 class="font-heading text-[1.25rem] font-bold text-white mb-3 group-hover:text-accent-teal transition-colors">
+              {s.title}
+            </h2>
+            <p class="text-slate-400 text-[0.95rem] leading-[1.65] mb-4">{s.description}</p>
+            <span class="text-accent-teal text-sm font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              Learn more <i class="ti ti-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+      ))}
     </div>
   </section>
 
