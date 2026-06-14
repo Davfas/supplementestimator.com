@@ -3,44 +3,44 @@ const services = [
   {
     accent: '#3B82F6',
     title: 'Xactimate Estimate Writing',
-    href: '/services/xactimate-estimate-writing',
     body: "Accurate, detailed, code-compliant estimates built in Xactimate with local pricing. Ready for carrier submission or client review. We don't miss line items.",
     image: '/firefly-xactimate-hands.png',
+    href: '/services/xactimate-estimate-writing',
   },
   {
     accent: '#14B8A6',
     title: 'Supplement Writing',
-    href: '/services/supplement-writing',
     body: "We tear apart the carrier's scope line by line. Missing materials, underpaid labor, code upgrades, overlooked damage. If it belongs on the claim, we find it.",
     image: '/firefly-dual-monitor.png',
+    href: '/services/supplement-writing',
   },
   {
     accent: '#3B82F6',
     title: 'Carrier Negotiations',
-    href: '/services/carrier-negotiations',
     body: "We go back and forth with the adjuster so you don't have to. Documentation, follow-ups, pushback. We know what gets approved.",
     image: '/firefly-claim-approved.png',
+    href: '/services/carrier-negotiations',
   },
   {
     accent: '#14B8A6',
     title: 'Final Invoice Submission',
-    href: '/services/final-invoice-submission',
     body: 'After the work is done, we prepare and submit the final invoice, handle documentation requests, and follow up until the payment clears.',
     image: '/firefly-acme-invoice.png',
+    href: '/services/final-invoice-submission',
   },
   {
     accent: '#3B82F6',
     title: 'Consulting & Training',
-    href: '/services/consulting-training',
     body: 'Want your team to handle supplements in-house? We train your people on Xactimate, supplement strategy, and what to look for on every claim.',
     image: '/firefly-training.png',
+    href: '/services/consulting-training',
   },
   {
     accent: '#14B8A6',
     title: 'Fully White Labeled',
-    href: '/services/white-label-services',
     body: "We work inside your CRM, from your email, under your name. To the carrier, we're your employee. Your brand stays front and center.",
-    image="/Firefly_white_label.png",
+    image: '/Firefly_white_label.png',
+    href: '/services/white-label-services',
   },
 ];
 ---
@@ -58,22 +58,24 @@ const services = [
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     {services.map((s) => (
-      <a href={s.href} class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5">
-        {s.image ? (
-          <div class="w-full overflow-hidden" style="height: 260px;">
-            <img
-              src={s.image}
-              alt={s.title}
-              class="w-full h-full object-cover object-center"
-            />
-          </div>
-        ) : (
-          <div class="w-full overflow-hidden" set:html={s.svg} />
-        )}
-        <div class="h-1 w-full" style={`background: ${s.accent};`}></div>
+      
+        href={s.href}
+        class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5 group"
+      >
+        <div class="w-full overflow-hidden" style="height: 260px;">
+          <img
+            src={s.image}
+            alt={s.title}
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+        <div class="h-1 w-full bg-accent"></div>
         <div class="p-8">
-          <h3 class="font-heading text-[1.25rem] font-bold text-white mb-3">{s.title}</h3>
+          <h3 class="font-heading text-[1.25rem] font-bold text-white mb-3 group-hover:text-accent-teal transition-colors">{s.title}</h3>
           <p class="text-slate-400 text-[0.95rem] leading-[1.65]">{s.body}</p>
+          <div class="mt-6 text-accent-teal text-sm font-semibold flex items-center gap-1">
+            Learn more <i class="ti ti-arrow-right"></i>
+          </div>
         </div>
       </a>
     ))}
