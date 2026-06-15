@@ -4,6 +4,7 @@ import CTA from '../../components/CTA.astro';
 
 const posts = [
   {
+    href: "/blog/claim-documentation-checklist",
     slug: "claim-documentation-checklist",
     title: "The Complete Claim Documentation Checklist for Roofing Contractors",
     excerpt: "From signing the contract to submitting for supplementing — everything your field team needs to document so your claims team can get you paid.",
@@ -13,6 +14,7 @@ const posts = [
     category: "Claims Management"
   },
   {
+    href: "/blog/photos-required-for-supplements",
     slug: "photos-required-for-supplements",
     title: "Every Photo You Need to Supplement a Roofing Claim (And Why)",
     excerpt: "Missing photos are the number one reason supplements get denied. Here's the complete photo checklist for roof inspections, reinspections, exterior damage, and build documentation.",
@@ -58,7 +60,7 @@ const schema = {
     <div class="max-w-page mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
       {posts.map((p) => (
         
-          href={"/blog/" + p.slug}
+          href={p.href}
           class="bg-secondary border border-accent/15 rounded-xl overflow-hidden transition-[border-color,transform] duration-300 hover:border-accent hover:-translate-y-0.5 group"
         >
           <div class="w-full overflow-hidden" style="height: 220px;">
