@@ -1,1 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTA from '../../components/CTA.astro';
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Every Photo You Need to Supplement a Roofing Claim (And Why)",
+  "description": "Missing photos are the number one reason supplements get denied. Here's the complete photo checklist for roof inspections, reinspections, exterior damage, and build documentation.",
+  "url": "https://supplementestimator.com/blog/photos-required-for-supplements",
+  "datePublished": "2026-06-14",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Precision Estimating and Supplements",
+    "url": "https://supplementestimator.com"
+  }
+};
+---
+
+<Layout
+  title="Every Photo You Need to Supplement a Roofing Claim | Precision Estimating"
+  description="Missing photos are the number one reason supplements get denied. Here's the complete photo checklist for roof inspections, reinspections, exterior damage, and build documentation."
+  canonical="https://supplementestimator.com/blog/photos-required-for-supplements"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+    <div
+      class="absolute inset-0"
+      style="background-image: url('/firefly-hail-damage.png'); background-attachment: fixed; background-size: cover; background-position: center;"
+    ></div>
+    <div class="absolute inset-0" style="background: rgba(12, 25, 38, 0.75);"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 md:px-8 py-24 text-center">
+      <div class="inline-flex items-center gap-2 bg-surface border border-accent/20 rounded-full px-4 py-1.5 text-accent-teal text-sm font-medium mb-6">
+        Supplement Writing · 6 min read
+      </div>
+      <h1 class="font-heading text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        Every Photo You Need to Supplement a Roofing Claim (And Why)
+      </h1>
+      <p class="text-slate-300 text-lg">June 14, 2026 · Precision Estimating and Supplements</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="px-5 md:px-8 py-20 bg-primary">
+    <div class="max-w-3xl mx-auto">
+
+      <p class="text-slate-300 text-lg leading-relaxed mb-8">
+        Missing or incomplete photos are the single most common reason a supplement gets pushed back or denied. Carriers need visual evidence for every line item you're claiming. Without it, they'll cut it. Here's exactly what to shoot and why each photo matters.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">Roof Inspection Photos</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">Every roof inspection needs the following at a minimum:</p>
+      <ul class="text-slate-400 flex flex-col gap-3 mb-8">
+        <li>Overview photos of all four elevations — wide shots first, then close-ups</li>
+        <li>Drip edge and gutter apron — lift the shingle to photograph whether drip is over or under the felt</li>
+        <li>Drip nailed into fascia and gutter nailed into drip — document both</li>
+        <li>Starter row — photograph at both eaves and rakes</li>
+        <li>Overhang width at eaves — photo of tape measure from below the soffit</li>
+        <li>Ice and water shield — photograph whether it's present and how wide</li>
+        <li>All roof accessories — vents, pipe jacks, satellite dishes, etc. from overview and close-up</li>
+        <li>Valleys — photograph type and condition</li>
+        <li>Hail damage to accessories — close-up of every damaged soft metal</li>
+        <li>Chimney chase cover and cap damage</li>
+        <li>Flashings — step, end-wall, chimney — photograph rust, mastic, and nails through flashing into shingles</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">Reinspection Photos — Roof</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">If the carrier is pushing back or you're going to a reinspection, you need all of the above plus:</p>
+      <ul class="text-slate-400 flex flex-col gap-3 mb-8">
+        <li>Test squares — mark out the corners of a 100 SF test square on one slope per direction</li>
+        <li>Circle all hail hits — do not mark nail pops, footfalls, or blisters</li>
+        <li>Close-ups of at least three hail hits per slope — three courses of shingles with the hit in the middle</li>
+        <li>Overview of the marked test square — best angle is from the lower corner with the entire square visible</li>
+        <li>All soft metal damage — use chalk to define hail hits on soft metals</li>
+        <li>Overviews from each end of the ridges and top-down photos of each slope</li>
+        <li>Elevation photos — one for each elevation</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">Reinspection Photos — Exterior</h2>
+      <ul class="text-slate-400 flex flex-col gap-3 mb-8">
+        <li>Elevation overviews</li>
+        <li>Chalked window wraps — close-up and overview showing which elevation</li>
+        <li>Siding hail hits — close-ups and overview showing which elevation</li>
+        <li>Siding accessories — show caulking around accessories, windows, and doors</li>
+        <li>Gutters and downspouts — chalked, with tape measure showing downspout width</li>
+        <li>Windows, screens, fascia — any storm damaged items</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">Exterior Photos</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">Every exterior photo needs both a close-up of the damage AND an overview showing which elevation the item is on. Then:</p>
+      <ul class="text-slate-400 flex flex-col gap-3 mb-8">
+        <li>All four elevation overviews — close-ups for that elevation should follow directly after</li>
+        <li>Fascia damage — material type and size</li>
+        <li>Gutter and downspout damage — tape measure on the wide side of downspout (3" or 4")</li>
+        <li>Window damage — overview showing location on elevation before close-ups; photograph the make of window on the glass or interior handle if full replacement is needed</li>
+        <li>Siding — overview of elevations, close-up of texture, magnet test for steel/aluminum, photo of siding gauge for thickness</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">Build Photos</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">Build photos are often overlooked but are critical for supplementing items that happen during installation:</p>
+      <ul class="text-slate-400 flex flex-col gap-3 mb-8">
+        <li>Ice and water — photograph in valleys and at eaves showing width</li>
+        <li>Step flashing — before and after photos if damaged during tear-off and replaced</li>
+        <li>Steep and high roofs — photo of crew in harnesses (required for safety supplement line items)</li>
+        <li>Exhaust and furnace caps attached to roof after tear-off — shows additional removal labor</li>
+        <li>Decking — photograph any gaps, unnailable areas, or decking that needs replacement</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">The Rule That Covers Everything</h2>
+      <p class="text-slate-400 leading-relaxed mb-8">
+        Every damaged item needs two photos: a close-up of the damage itself, and an overview showing where on the property that item is located. If you can't show the carrier where it is and what it looks like, they won't pay for it. Shoot everything twice.
+      </p>
+
+      <div class="bg-secondary border border-accent/20 rounded-2xl p-8 mt-12">
+        <h3 class="font-heading text-xl font-bold text-white mb-3">Let Us Handle the Supplement</h3>
+        <p class="text-slate-400 leading-relaxed mb-4">Send us your photos and claim file. We'll identify every missed line item, write the supplement, and negotiate with the carrier until it's approved. No PDFs and good luck — we stay in it until you get paid.</p>
+        <a href="tel:+16057602228" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+          <i class="ti ti-phone"></i> Talk to Us Today
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <CTA />
+</Layout>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
