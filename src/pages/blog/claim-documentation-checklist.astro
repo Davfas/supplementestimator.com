@@ -1,1 +1,132 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTA from '../../components/CTA.astro';
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Complete Claim Documentation Checklist for Roofing Contractors",
+  "description": "From signing the contract to submitting for supplementing — everything your field team needs to document so your claims team can get you paid.",
+  "url": "https://supplementestimator.com/blog/claim-documentation-checklist",
+  "datePublished": "2026-06-14",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Precision Estimating and Supplements",
+    "url": "https://supplementestimator.com"
+  }
+};
+---
+
+<Layout
+  title="The Complete Claim Documentation Checklist for Roofing Contractors | Precision Estimating"
+  description="From signing the contract to submitting for supplementing — everything your field team needs to document so your claims team can get you paid."
+  canonical="https://supplementestimator.com/blog/claim-documentation-checklist"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+    <div
+      class="absolute inset-0"
+      style="background-image: url('/firefly-xactimate-hands.png'); background-attachment: fixed; background-size: cover; background-position: center;"
+    ></div>
+    <div class="absolute inset-0" style="background: rgba(12, 25, 38, 0.75);"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 md:px-8 py-24 text-center">
+      <div class="inline-flex items-center gap-2 bg-surface border border-accent/20 rounded-full px-4 py-1.5 text-accent-teal text-sm font-medium mb-6">
+        Claims Management · 8 min read
+      </div>
+      <h1 class="font-heading text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        The Complete Claim Documentation Checklist for Roofing Contractors
+      </h1>
+      <p class="text-slate-300 text-lg">June 14, 2026 · Precision Estimating and Supplements</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="px-5 md:px-8 py-20 bg-primary">
+    <div class="max-w-3xl mx-auto prose prose-invert prose-slate max-w-none">
+
+      <p class="text-slate-300 text-lg leading-relaxed mb-8">
+        Managing a claim file properly from the moment you sign the contract to the point where it's ready for supplementing is the difference between getting paid in full and leaving thousands on the table. This checklist walks your field team through every step of the process.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">Step 1: On-Site — Before You Do Anything Else</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">The moment you're on the property, your documentation job begins. Here's what needs to happen before you leave the job site:</p>
+      <ul class="text-slate-400 flex flex-col gap-3 mb-8">
+        <li>Create a project in your CRM (CompanyCam, JobNimbus, AccuLynx, etc.) and start uploading photos immediately</li>
+        <li>Take field notes — scope every damaged area, note everything and keep notes organized by structure and elevation</li>
+        <li>Verify existing materials — check with the building owner or last contractor for any records of existing materials if available</li>
+        <li>Separate scope notes by structure — list each elevation separately. If an elevation has no damage, write "No Storm Damage" so you have documentation</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">Step 2: Complete Your Checklists</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">All checklists need to be completed, signed, and uploaded into your CRM before the job file is handed off. Use the following outline for scoping:</p>
+
+      <h3 class="font-heading text-xl font-semibold text-white mt-8 mb-3">House Roof</h3>
+      <ul class="text-slate-400 flex flex-col gap-2 mb-6">
+        <li>RSVDGG — Ridge, Soffit, Valley, Drip edge, Gutters, Gutter guards</li>
+        <li>Accessories — overview and close-up photos of every accessory on the roof</li>
+        <li>Special instructions — re-deck required, no access, multiple layers, steep pitch, etc.</li>
+      </ul>
+
+      <h3 class="font-heading text-xl font-semibold text-white mt-8 mb-3">House Exterior</h3>
+      <ul class="text-slate-400 flex flex-col gap-2 mb-6">
+        <li>Front, Right, Rear, Left elevations — every elevation gets its own set of photos</li>
+        <li>Windows and doors — if applicable</li>
+        <li>Siding — if applicable</li>
+      </ul>
+
+      <h3 class="font-heading text-xl font-semibold text-white mt-8 mb-3">Outbuildings</h3>
+      <ul class="text-slate-400 flex flex-col gap-2 mb-6">
+        <li>Garages, sheds, and any other structures must be listed and scoped separately</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">Step 3: Roof Scope Checklist</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">This is one of the most commonly incomplete parts of a claim file. Go through each item carefully:</p>
+
+      <h3 class="font-heading text-xl font-semibold text-white mt-8 mb-3">Flashing</h3>
+      <ul class="text-slate-400 flex flex-col gap-2 mb-6">
+        <li>Eave drip edge or flashing</li>
+        <li>Rake drip edge or flashing</li>
+        <li>Headwall flashing — commonly missed by adjusters or the wrong line item is used</li>
+        <li>Sidewall flashing — note this is different from step flashing</li>
+        <li>Kick-out diverters — required by code when replacing roof and siding together</li>
+      </ul>
+
+      <h3 class="font-heading text-xl font-semibold text-white mt-8 mb-3">Underlayment</h3>
+      <ul class="text-slate-400 flex flex-col gap-2 mb-6">
+        <li>Starter existing — note and photograph</li>
+        <li>Existing underlayment type — synthetic, felt 15lb or 30lb, number of layers</li>
+        <li>Ice and water shield — note number of courses (3ft each)</li>
+      </ul>
+
+      <h3 class="font-heading text-xl font-semibold text-white mt-8 mb-3">Ventilation</h3>
+      <ul class="text-slate-400 flex flex-col gap-2 mb-6">
+        <li>Turtle vents — count, detach and reset vs replace</li>
+        <li>Attic power vents — count</li>
+        <li>Turbine vents — count</li>
+        <li>Ridge venting — linear feet</li>
+        <li>Pipe jacks — count, note diameter (less than or greater than 4")</li>
+        <li>Exhaust caps — count (bathrooms and kitchen)</li>
+        <li>Furnace vents — count (code requires extension above ridge line)</li>
+        <li>Passive attic intake vents — one per 300 SF except where ceiling is vaulted</li>
+      </ul>
+
+      <h3 class="font-heading text-xl font-semibold text-white mt-8 mb-3">Roof Structure</h3>
+      <ul class="text-slate-400 flex flex-col gap-2 mb-6">
+        <li>Roof system type — gable, hip, partial hip</li>
+        <li>High roof — note if two stories or more, number of high squares</li>
+        <li>Pitch — document all pitches</li>
+        <li>EagleView or HOVER — available or hand measure required</li>
+        <li>Gable cornice returns — count and condition</li>
+        <li>Access — full access, limited front, or limited/no rear access</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-white mt-12 mb-4">Step 4: Exterior Scope Checklist</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-white mt-8 mb-3">Elevation Overviews</h3>
+      <ul class="text-slate-400 flex flex-col gap-2 mb-6">
+        <li>Start with a wide shot of each elevation</li>
+        <li>Follow each overview with close-ups of specific damage, accessories, and features</li>
+        <li>Front, Right, Rear, Left elevations — all four required</li>
+      </ul>
