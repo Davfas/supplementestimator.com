@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CTA from '../../components/CTA.astro';
+import { business } from '../../data/business.js';
 
 const schema = {
   "@context": "https://schema.org",
@@ -11,9 +12,13 @@ const schema = {
   "datePublished": "2026-06-14",
   "publisher": {
     "@type": "Organization",
-    "name": "Precision Estimating and Supplements",
-    "url": "https://supplementestimator.com"
-  } 
+    "name": business.name,
+    "url": business.url,
+    "logo": {
+      "@type": "ImageObject",
+      "url": business.logo
+    }
+  }
 };
 ---
 
@@ -116,7 +121,7 @@ const schema = {
       <div class="bg-secondary border border-accent/20 rounded-2xl p-8 mt-12">
         <h3 class="font-heading text-xl font-bold text-white mb-3">Let Us Handle the Supplement</h3>
         <p class="text-slate-400 leading-relaxed mb-4">Send us your photos and claim file. We'll identify every missed line item, write the supplement, and negotiate with the carrier until it's approved. No PDFs and good luck — we stay in it until you get paid.</p>
-        <a href="tel:+16057602228" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+        <a href="tel:+16128007765" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
           <i class="ti ti-phone"></i> Talk to Us Today
         </a>
       </div>

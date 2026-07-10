@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CTA from '../../components/CTA.astro';
+import { business } from '../../data/business.js';
 
 const schema = {
   "@context": "https://schema.org",
@@ -11,8 +12,12 @@ const schema = {
   "datePublished": "2026-06-14",
   "publisher": {
     "@type": "Organization",
-    "name": "Precision Estimating and Supplements",
-    "url": "https://supplementestimator.com"
+    "name": business.name,
+    "url": business.url,
+    "logo": {
+      "@type": "ImageObject",
+      "url": business.logo
+    }
   }
 };
 ---

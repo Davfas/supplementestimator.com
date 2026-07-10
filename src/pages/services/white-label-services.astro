@@ -1,5 +1,6 @@
 ---
 import ServicePage from '../../components/ServicePage.astro';
+import { business } from '../../data/business.js';
 
 const schema = {
   "@context": "https://schema.org",
@@ -7,8 +8,10 @@ const schema = {
   "name": "White Label Estimating Services",
   "provider": {
     "@type": "ProfessionalService",
-    "name": "Precision Estimating and Supplements",
-    "url": "https://supplementestimator.com"
+    "name": business.name,
+    "url": business.url,
+    "telephone": business.telephone,
+    "logo": business.logo
   },
   "description": "Fully white labeled insurance estimating and supplement services for roofing contractors, GCs, and restoration companies. We work under your brand — invisible to carriers and clients.",
   "url": "https://supplementestimator.com/services/white-label-services",

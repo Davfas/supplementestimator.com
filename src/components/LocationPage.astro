@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CTA from './CTA.astro';
+import { business } from '../data/business.js';
 
 interface Props {
   state: string;
@@ -21,8 +22,10 @@ const schema = {
   "name": `Insurance Supplement Estimating in ${state}`,
   "provider": {
     "@type": "ProfessionalService",
-    "name": "Precision Estimating and Supplements",
-    "url": "https://supplementestimator.com"
+    "name": business.name,
+    "url": business.url,
+    "telephone": business.telephone,
+    "logo": business.logo
   },
   "description": description,
   "url": canonical,
@@ -95,7 +98,7 @@ const services = [
         {blurb}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="tel:+16057602228" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+        <a href="tel:+16128007765" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
           <i class="ti ti-phone"></i> Call Now
         </a>
         <a href="mailto:dave@supplementestimator.com" class="inline-flex items-center justify-center gap-2 bg-surface border border-accent/20 hover:border-accent/50 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
@@ -174,7 +177,7 @@ const services = [
       <p class="text-slate-300 text-lg leading-relaxed mb-8">
         We work 100% remotely and serve contractors in all 50 states. Whether you're a roofing contractor, general contractor, or restoration company in {state}, we can turn around estimates and supplements fast so you get paid without the wait.
       </p>
-      <a href="tel:+16057602228" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-xl transition-colors text-lg">
+      <a href="tel:+16128007765" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-xl transition-colors text-lg">
         <i class="ti ti-phone"></i> Talk to Dave Today
       </a>
     </div>

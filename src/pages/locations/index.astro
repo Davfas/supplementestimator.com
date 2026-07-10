@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CTA from '../../components/CTA.astro';
+import { business } from '../../data/business.js';
 
 const currentMarkets = [
   { name: "Minnesota", slug: "minnesota", abbr: "MN" },
@@ -26,8 +27,10 @@ const expandingMarkets = [
 const schema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Precision Estimating and Supplements",
+  "name": business.name,
   "url": "https://supplementestimator.com",
+  "telephone": business.telephone,
+  "logo": business.logo,
   "description": "Nationwide insurance supplement estimating for roofing contractors, general contractors, and restoration companies.",
   "areaServed": { "@type": "Country", "name": "United States" }
 };
@@ -63,7 +66,7 @@ const schema = {
         Precision Estimating works 100% remotely. No matter where your jobs are, we can write estimates, handle supplements, and negotiate with carriers on your behalf.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="tel:+16057602228" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+        <a href="tel:+16128007765" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
           <i class="ti ti-phone"></i> Call Now
         </a>
         <a href="mailto:dave@supplementestimator.com" class="inline-flex items-center justify-center gap-2 bg-surface border border-accent/20 hover:border-accent/50 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
@@ -113,7 +116,7 @@ const schema = {
       <p class="text-slate-300 max-w-xl mx-auto mb-8">
         We serve contractors in all 50 states. Reach out and we'll get you taken care of — no matter where you're located.
       </p>
-      <a href="tel:+16057602228" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+      <a href="tel:+16128007765" class="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
         <i class="ti ti-phone"></i> Call Us Today
       </a>
     </div>

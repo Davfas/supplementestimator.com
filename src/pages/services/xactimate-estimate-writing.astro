@@ -1,5 +1,6 @@
 ---
 import ServicePage from '../../components/ServicePage.astro';
+import { business } from '../../data/business.js';
 
 const schema = {
   "@context": "https://schema.org",
@@ -7,8 +8,10 @@ const schema = {
   "name": "Xactimate Estimate Writing",
   "provider": {
     "@type": "ProfessionalService",
-    "name": "Precision Estimating and Supplements",
-    "url": "https://supplementestimator.com"
+    "name": business.name,
+    "url": business.url,
+    "telephone": business.telephone,
+    "logo": business.logo
   },
   "description": "Professional Xactimate estimate writing for roofing contractors, general contractors, and restoration companies. Accurate, carrier-ready estimates written by a former licensed adjuster.",
   "url": "https://supplementestimator.com/services/xactimate-estimate-writing",

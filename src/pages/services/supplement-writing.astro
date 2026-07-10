@@ -1,5 +1,6 @@
 ---
 import ServicePage from '../../components/ServicePage.astro';
+import { business } from '../../data/business.js';
 
 const schema = {
   "@context": "https://schema.org",
@@ -7,8 +8,10 @@ const schema = {
   "name": "Insurance Supplement Writing",
   "provider": {
     "@type": "ProfessionalService",
-    "name": "Precision Estimating and Supplements",
-    "url": "https://supplementestimator.com"
+    "name": business.name,
+    "url": business.url,
+    "telephone": business.telephone,
+    "logo": business.logo
   },
   "description": "Expert insurance supplement writing for roofing, general contractors, and restoration companies. We identify missed line items and recover money carriers owe you.",
   "url": "https://supplementestimator.com/services/supplement-writing",

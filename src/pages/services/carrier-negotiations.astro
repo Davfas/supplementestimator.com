@@ -1,5 +1,6 @@
 ---
 import ServicePage from '../../components/ServicePage.astro';
+import { business } from '../../data/business.js';
 
 const schema = {
   "@context": "https://schema.org",
@@ -7,8 +8,10 @@ const schema = {
   "name": "Insurance Carrier Negotiations",
   "provider": {
     "@type": "ProfessionalService",
-    "name": "Precision Estimating and Supplements",
-    "url": "https://supplementestimator.com"
+    "name": business.name,
+    "url": business.url,
+    "telephone": business.telephone,
+    "logo": business.logo
   },
   "description": "Professional insurance carrier negotiations for roofing contractors, GCs, and restoration companies. We fight carriers on your behalf to get claims approved at the right amount.",
   "url": "https://supplementestimator.com/services/carrier-negotiations",

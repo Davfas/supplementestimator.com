@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CTA from '../../components/CTA.astro';
+import { business } from '../../data/business.js';
 
 const services = [
   {
@@ -61,8 +62,10 @@ const schemaItems = services.map((s, i) => ({
 const schema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Precision Estimating and Supplements",
+  "name": business.name,
   "url": "https://supplementestimator.com/services",
+  "telephone": business.telephone,
+  "logo": business.logo,
   "description": "Xactimate estimate writing, supplement writing, carrier negotiations, and insurance claims consulting for roofing contractors, GCs, and restoration companies.",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
