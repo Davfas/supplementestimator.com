@@ -8,13 +8,24 @@ interface Props {
   stateAbbr: string;
   blurb: string;
   image?: string;
+  regionalNote?: string;
 }
 
-const { state, stateAbbr, blurb, image } = Astro.props;
+const { state, stateAbbr, blurb, image, regionalNote } = Astro.props;
 
-const title = `Insurance Supplement Estimator in ${state} | Precision Estimating`;
+const title = `Supplement Estimating in ${state} | Precision Estimating`;
 const description = `Precision Estimating serves roofing contractors, GCs, and restoration companies in ${state}. Xactimate estimates, supplement writing, and carrier negotiations — nationwide remote service.`;
 const canonical = `https://supplementestimator.com/locations/${state.toLowerCase().replace(/\s+/g, '-')}`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://supplementestimator.com" },
+    { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://supplementestimator.com/locations" },
+    { "@type": "ListItem", "position": 3, "name": state, "item": canonical }
+  ]
+};
 
 const schema = {
   "@context": "https://schema.org",
@@ -74,6 +85,8 @@ const services = [
 ---
 
 <Layout title={title} description={description} canonical={canonical} schema={schema}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero with full-screen parallax + frosted glass -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -174,6 +187,11 @@ const services = [
       <p class="text-slate-300 text-lg leading-relaxed mb-8">
         Precision Estimating & Supplements is backed by former carrier-side adjusting experience and Xactimate expertise, with thousands of property claims reviewed, estimated, and negotiated. That experience provides a unique understanding of how carriers evaluate claims and what documentation is needed to support a complete and accurate scope of repairs.
       </p>
+      {regionalNote && (
+        <p class="text-slate-300 text-lg leading-relaxed mb-8">
+          {regionalNote}
+        </p>
+      )}
       <p class="text-slate-300 text-lg leading-relaxed mb-8">
         We work 100% remotely and serve contractors in all 50 states. Whether you're a roofing contractor, general contractor, or restoration company in {state}, we can turn around estimates and supplements fast so you get paid without the wait.
       </p>
