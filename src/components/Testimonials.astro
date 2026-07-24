@@ -6,6 +6,8 @@ interface Props {
   eyebrow?: string;
   heading?: string;
   showViewAll?: boolean;
+  autoplay?: boolean;
+  autoplayInterval?: number;
 }
 
 const {
@@ -13,6 +15,8 @@ const {
   eyebrow = 'Client Reviews',
   heading = 'What Contractors Are Saying',
   showViewAll = false,
+  autoplay = false,
+  autoplayInterval = 6000,
 } = Astro.props;
 
 const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
@@ -33,7 +37,11 @@ const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
       </div>
     </div>
 
-    <div class="testimonial-carousel max-w-[760px] mx-auto">
+    <div
+      class="testimonial-carousel max-w-[760px] mx-auto"
+      data-autoplay={autoplay ? 'true' : 'false'}
+      data-autoplay-interval={autoplayInterval}
+    >
       <div class="testimonial-viewport relative">
         <button
           type="button"
@@ -160,7 +168,10 @@ const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
     const dots = Array.from(carousel.querySelectorAll('.testimonial-dot')) as HTMLElement[];
     const prevBtn = carousel.querySelector('.testimonial-prev');
     const nextBtn = carousel.querySelector('.testimonial-next');
+    const autoplay = (carousel as HTMLElement).dataset.autoplay === 'true';
+    const interval = Number((carousel as HTMLElement).dataset.autoplayInterval) || 6000;
     let current = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
 
     function show(index: number) {
       current = (index + slides.length) % slides.length;
@@ -174,8 +185,33 @@ const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
       });
     }
 
-    dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
-    prevBtn?.addEventListener('click', () => show(current - 1));
-    nextBtn?.addEventListener('click', () => show(current + 1));
+    function stop() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function start() {
+      if (!autoplay || timer) return;
+      timer = setInterval(() => show(current + 1), interval);
+    }
+
+    function restart() {
+      stop();
+      start();
+    }
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); restart(); }));
+    prevBtn?.addEventListener('click', () => { show(current - 1); restart(); });
+    nextBtn?.addEventListener('click', () => { show(current + 1); restart(); });
+
+    if (autoplay) {
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      carousel.addEventListener('focusin', stop);
+      carousel.addEventListener('focusout', start);
+      start();
+    }
   });
 </script>
