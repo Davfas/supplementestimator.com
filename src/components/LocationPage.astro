@@ -92,9 +92,9 @@ const services = [
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
 
     <div
-      class="absolute inset-0"
+      class={image ? "parallax-bg" : "absolute inset-0"}
       style={image
-        ? `background-image: url('${image}'); background-attachment: fixed; background-size: cover; background-position: center;`
+        ? `background-image: url('${image}');`
         : `background-color: #0C1926;`}
     ></div>
 

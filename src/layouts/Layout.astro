@@ -51,5 +51,46 @@ const {
     <slot />
   </main>
   <Footer />
+  <script>
+    const bgs = Array.from(document.querySelectorAll('.parallax-bg')) as HTMLElement[];
+
+    if (bgs.length) {
+      const visible = new Set<HTMLElement>();
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target as HTMLElement;
+          if (entry.isIntersecting) visible.add(el);
+          else visible.delete(el);
+        });
+      }, { rootMargin: '25% 0px 25% 0px' });
+      bgs.forEach((el) => io.observe(el));
+
+      const maxShift = 40;
+      let ticking = false;
+
+      function update() {
+        ticking = false;
+        visible.forEach((el) => {
+          const parent = el.parentElement as HTMLElement;
+          const rect = parent.getBoundingClientRect();
+          const total = window.innerHeight + rect.height;
+          const progress = (window.innerHeight - rect.top) / total;
+          const offset = (progress - 0.5) * maxShift;
+          el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+        });
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      update();
+    }
+  </script>
 </body>
 </html>

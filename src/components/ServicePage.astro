@@ -18,7 +18,7 @@ interface Props {
 const { title, description, canonical, headline, subheadline, icon, image, benefits, faqs, schema } = Astro.props;
 
 const heroBg = image
-  ? "background-image: url('" + image + "'); background-attachment: fixed; background-size: cover; background-position: center;"
+  ? "background-image: url('" + image + "');"
   : "background-color: #0C1926;";
 
 const faqSchema = {
@@ -52,7 +52,7 @@ const breadcrumbSchema = {
 
   <!-- Hero -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0" style={heroBg}></div>
+    <div class={image ? "parallax-bg" : "absolute inset-0"} style={heroBg}></div>
     <div class="relative z-10 mx-4 md:mx-auto max-w-2xl w-full text-center px-10 py-14 rounded-2xl"
       style="background: rgba(12, 25, 38, 0.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1);">
       <div class="w-16 h-16 bg-surface border border-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-6">

@@ -25,6 +25,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Smooth parallax background — replaces background-attachment: fixed (causes scroll jank).
+   Stretched 20% beyond its container top/bottom so JS can shift it via transform without exposing edges. */
+.parallax-bg {
+  position: absolute;
+  inset: -20% 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
 }
