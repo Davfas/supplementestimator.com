@@ -6,8 +6,10 @@ import Services from '../components/Services.astro';
 import Process from '../components/Process.astro';
 import WhiteLabel from '../components/WhiteLabel.astro';
 import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
 import CTA from '../components/CTA.astro';
 import { business } from '../data/business.js';
+import { testimonials, aggregateRating } from '../data/testimonials.js';
 
 const schema = {
   "@context": "https://schema.org",
@@ -27,7 +29,19 @@ const schema = {
     "Final Invoice Submission",
     "Consulting & Training",
     "White Label Estimating Services"
-  ]
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": aggregateRating.ratingValue,
+    "bestRating": aggregateRating.bestRating,
+    "reviewCount": aggregateRating.reviewCount
+  },
+  "review": testimonials.map((t) => ({
+    "@type": "Review",
+    "author": { "@type": "Person", "name": t.name },
+    "reviewRating": { "@type": "Rating", "ratingValue": t.rating, "bestRating": 5 },
+    "reviewBody": t.text
+  }))
 };
 ---
 
@@ -38,6 +52,7 @@ const schema = {
   <Process />
   <WhiteLabel />
   <About />
+  <Testimonials limit={6} showViewAll={true} />
   <CTA />
   <div class="px-5 md:px-8 py-6 border-t border-accent/10 max-w-page mx-auto">
     <p class="text-slate-500 text-xs leading-relaxed">

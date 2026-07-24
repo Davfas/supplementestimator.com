@@ -1,0 +1,181 @@
+---
+import { testimonials as allTestimonials } from '../data/testimonials.js';
+
+interface Props {
+  limit?: number;
+  eyebrow?: string;
+  heading?: string;
+  showViewAll?: boolean;
+}
+
+const {
+  limit,
+  eyebrow = 'Client Reviews',
+  heading = 'What Contractors Are Saying',
+  showViewAll = false,
+} = Astro.props;
+
+const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
+---
+
+<section id="testimonials" class="px-5 md:px-8 py-24 border-t border-accent/15">
+  <div class="max-w-page mx-auto">
+    <div class="text-center mb-12">
+      <div class="text-xs font-semibold tracking-[0.1em] uppercase text-accent-teal mb-4">{eyebrow}</div>
+      <h2 class="font-heading text-[2rem] md:text-[2.5rem] font-bold tracking-[-0.02em] text-white mb-4">
+        {heading}
+      </h2>
+      <div class="flex items-center justify-center gap-2 text-slate-300 text-[0.95rem]">
+        <span class="flex gap-0.5 text-[#FBBF24]" aria-hidden="true">
+          {[...Array(5)].map(() => <i class="ti ti-star-filled"></i>)}
+        </span>
+        <span>5.0 from {allTestimonials.length} Google reviews</span>
+      </div>
+    </div>
+
+    <div class="testimonial-carousel max-w-[760px] mx-auto">
+      <div class="testimonial-viewport relative">
+        <button
+          type="button"
+          class="testimonial-nav testimonial-prev"
+          aria-label="Show previous testimonial"
+        >
+          <i class="ti ti-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="testimonial-track">
+          {items.map((t, i) => (
+            <article
+              class="testimonial-slide bg-secondary border border-accent/15 rounded-2xl p-8 md:p-10 text-center"
+              data-slide-index={i}
+              style={i === 0 ? undefined : 'display:none'}
+            >
+              <i class="ti ti-quote text-accent-teal text-[1.75rem] mb-4 inline-block" aria-hidden="true"></i>
+              <span class="flex justify-center gap-0.5 text-[#FBBF24] mb-5" aria-hidden="true">
+                {[...Array(t.rating)].map(() => <i class="ti ti-star-filled"></i>)}
+              </span>
+              <p class="text-slate-200 text-[1.05rem] md:text-[1.1rem] leading-[1.7] mb-6 italic">
+                &ldquo;{t.text}&rdquo;
+              </p>
+              <div class="font-heading font-bold text-white text-[0.95rem]">{t.name}</div>
+              {t.company && <div class="text-slate-400 text-[0.85rem] mt-1">{t.company}</div>}
+            </article>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          class="testimonial-nav testimonial-next"
+          aria-label="Show next testimonial"
+        >
+          <i class="ti ti-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="testimonial-dots flex justify-center gap-2.5 mt-8" role="tablist" aria-label="Choose a testimonial">
+        {items.map((t, i) => (
+          <button
+            type="button"
+            class={`testimonial-dot ${i === 0 ? 'is-active' : ''}`}
+            data-dot-index={i}
+            role="tab"
+            aria-selected={i === 0 ? 'true' : 'false'}
+            aria-label={`Show testimonial from ${t.name}`}
+          ></button>
+        ))}
+      </div>
+    </div>
+
+    {showViewAll && (
+      <div class="text-center mt-12">
+        <a
+          href="/testimonials"
+          class="inline-flex items-center gap-2 text-accent-teal hover:text-white font-semibold text-sm transition-colors no-underline"
+        >
+          Read All {allTestimonials.length} Reviews <i class="ti ti-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .testimonial-viewport {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .testimonial-track {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .testimonial-nav {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    background: #1E3348;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .testimonial-nav:hover {
+    color: #ffffff;
+    border-color: #14B8A6;
+  }
+
+  .testimonial-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 9999px;
+    background: rgba(148, 163, 184, 0.35);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s, width 0.2s;
+  }
+
+  .testimonial-dot.is-active {
+    background: #14B8A6;
+    width: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .testimonial-nav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.testimonial-carousel').forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll('.testimonial-slide')) as HTMLElement[];
+    const dots = Array.from(carousel.querySelectorAll('.testimonial-dot')) as HTMLElement[];
+    const prevBtn = carousel.querySelector('.testimonial-prev');
+    const nextBtn = carousel.querySelector('.testimonial-next');
+    let current = 0;
+
+    function show(index: number) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        slide.style.display = i === current ? '' : 'none';
+      });
+      dots.forEach((dot, i) => {
+        const active = i === current;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-selected', String(active));
+      });
+    }
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+    prevBtn?.addEventListener('click', () => show(current - 1));
+    nextBtn?.addEventListener('click', () => show(current + 1));
+  });
+</script>
