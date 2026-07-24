@@ -65,7 +65,8 @@ const {
       }, { rootMargin: '25% 0px 25% 0px' });
       bgs.forEach((el) => io.observe(el));
 
-      const maxShift = 40;
+      const bufferRatio = 0.25; // must match the -25% inset on .parallax-bg in global.css
+      const counterFactor = 0.5; // 0 = scrolls with content, 1 = fully anchored to viewport (like the old fixed background)
       let ticking = false;
 
       function update() {
@@ -73,9 +74,9 @@ const {
         visible.forEach((el) => {
           const parent = el.parentElement as HTMLElement;
           const rect = parent.getBoundingClientRect();
-          const total = window.innerHeight + rect.height;
-          const progress = (window.innerHeight - rect.top) / total;
-          const offset = (progress - 0.5) * maxShift;
+          const maxShift = rect.height * bufferRatio;
+          let offset = -rect.top * counterFactor;
+          offset = Math.max(-maxShift, Math.min(maxShift, offset));
           el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
         });
       }
