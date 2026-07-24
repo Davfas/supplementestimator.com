@@ -8,6 +8,7 @@ interface Props {
   showViewAll?: boolean;
   autoplay?: boolean;
   autoplayInterval?: number;
+  layout?: 'carousel' | 'grid';
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   showViewAll = false,
   autoplay = false,
   autoplayInterval = 6000,
+  layout = 'carousel',
 } = Astro.props;
 
 const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
@@ -37,62 +39,80 @@ const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
       </div>
     </div>
 
-    <div
-      class="testimonial-carousel max-w-[760px] mx-auto"
-      data-autoplay={autoplay ? 'true' : 'false'}
-      data-autoplay-interval={autoplayInterval}
-    >
-      <div class="testimonial-viewport relative">
-        <button
-          type="button"
-          class="testimonial-nav testimonial-prev"
-          aria-label="Show previous testimonial"
-        >
-          <i class="ti ti-chevron-left" aria-hidden="true"></i>
-        </button>
-
-        <div class="testimonial-track">
-          {items.map((t, i) => (
-            <article
-              class="testimonial-slide bg-secondary border border-accent/15 rounded-2xl p-8 md:p-10 text-center"
-              data-slide-index={i}
-              style={i === 0 ? undefined : 'display:none'}
-            >
-              <i class="ti ti-quote text-accent-teal text-[1.75rem] mb-4 inline-block" aria-hidden="true"></i>
-              <span class="flex justify-center gap-0.5 text-[#FBBF24] mb-5" aria-hidden="true">
-                {[...Array(t.rating)].map(() => <i class="ti ti-star-filled"></i>)}
-              </span>
-              <p class="text-slate-200 text-[1.05rem] md:text-[1.1rem] leading-[1.7] mb-6 italic">
-                &ldquo;{t.text}&rdquo;
-              </p>
-              <div class="font-heading font-bold text-white text-[0.95rem]">{t.name}</div>
-              {t.company && <div class="text-slate-400 text-[0.85rem] mt-1">{t.company}</div>}
-            </article>
-          ))}
-        </div>
-
-        <button
-          type="button"
-          class="testimonial-nav testimonial-next"
-          aria-label="Show next testimonial"
-        >
-          <i class="ti ti-chevron-right" aria-hidden="true"></i>
-        </button>
-      </div>
-
-      <div class="testimonial-dots flex justify-center gap-2.5 mt-8" role="tablist" aria-label="Choose a testimonial">
-        {items.map((t, i) => (
-          <button
-            type="button"
-            class={`testimonial-dot ${i === 0 ? 'is-active' : ''}`}
-            data-dot-index={i}
-            role="tab"
-            aria-selected={i === 0 ? 'true' : 'false'}
-            aria-label={`Show testimonial from ${t.name}`}
-          ></button>
+    {layout === 'grid' ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {items.map((t) => (
+          <article class="bg-secondary border border-accent/15 rounded-2xl p-8 text-center flex flex-col">
+            <i class="ti ti-quote text-accent-teal text-[1.75rem] mb-4 inline-block" aria-hidden="true"></i>
+            <span class="flex justify-center gap-0.5 text-[#FBBF24] mb-5" aria-hidden="true">
+              {[...Array(t.rating)].map(() => <i class="ti ti-star-filled"></i>)}
+            </span>
+            <p class="text-slate-200 text-[0.95rem] leading-[1.7] mb-6 italic flex-1">
+              &ldquo;{t.text}&rdquo;
+            </p>
+            <div class="font-heading font-bold text-white text-[0.95rem]">{t.name}</div>
+            {t.company && <div class="text-slate-400 text-[0.85rem] mt-1">{t.company}</div>}
+          </article>
         ))}
       </div>
-    </div>
+    ) : (
+      <div
+        class="testimonial-carousel max-w-[760px] mx-auto"
+        data-autoplay={autoplay ? 'true' : 'false'}
+        data-autoplay-interval={autoplayInterval}
+      >
+        <div class="testimonial-viewport relative">
+          <button
+            type="button"
+            class="testimonial-nav testimonial-prev"
+            aria-label="Show previous testimonial"
+          >
+            <i class="ti ti-chevron-left" aria-hidden="true"></i>
+          </button>
+
+          <div class="testimonial-track">
+            {items.map((t, i) => (
+              <article
+                class="testimonial-slide bg-secondary border border-accent/15 rounded-2xl p-8 md:p-10 text-center"
+                data-slide-index={i}
+                style={i === 0 ? undefined : 'display:none'}
+              >
+                <i class="ti ti-quote text-accent-teal text-[1.75rem] mb-4 inline-block" aria-hidden="true"></i>
+                <span class="flex justify-center gap-0.5 text-[#FBBF24] mb-5" aria-hidden="true">
+                  {[...Array(t.rating)].map(() => <i class="ti ti-star-filled"></i>)}
+                </span>
+                <p class="text-slate-200 text-[1.05rem] md:text-[1.1rem] leading-[1.7] mb-6 italic">
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div class="font-heading font-bold text-white text-[0.95rem]">{t.name}</div>
+                {t.company && <div class="text-slate-400 text-[0.85rem] mt-1">{t.company}</div>}
+              </article>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            class="testimonial-nav testimonial-next"
+            aria-label="Show next testimonial"
+          >
+            <i class="ti ti-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="testimonial-dots flex justify-center gap-2.5 mt-8" role="tablist" aria-label="Choose a testimonial">
+          {items.map((t, i) => (
+            <button
+              type="button"
+              class={`testimonial-dot ${i === 0 ? 'is-active' : ''}`}
+              data-dot-index={i}
+              role="tab"
+              aria-selected={i === 0 ? 'true' : 'false'}
+              aria-label={`Show testimonial from ${t.name}`}
+            ></button>
+          ))}
+        </div>
+      </div>
+    )}
 
     {showViewAll && (
       <div class="text-center mt-12">
