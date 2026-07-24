@@ -26,11 +26,11 @@ html {
 }
 
 /* Smooth parallax background — replaces background-attachment: fixed (causes scroll jank).
-   Stretched 25% beyond its container top/bottom so JS can shift it via transform without exposing edges.
-   The 25% here must match bufferRatio in Layout.astro's parallax script. */
+   Stretched 35% beyond its container top/bottom so JS can shift it via transform without exposing edges.
+   The 35% here must match bufferRatio in Layout.astro's parallax script. */
 .parallax-bg {
   position: absolute;
-  inset: -25% 0;
+  inset: -35% 0;
   background-size: cover;
   background-position: center;
   will-change: transform;

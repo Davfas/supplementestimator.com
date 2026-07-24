@@ -62,11 +62,11 @@ const {
           if (entry.isIntersecting) visible.add(el);
           else visible.delete(el);
         });
-      }, { rootMargin: '25% 0px 25% 0px' });
+      }, { rootMargin: '35% 0px 35% 0px' });
       bgs.forEach((el) => io.observe(el));
 
-      const bufferRatio = 0.25; // must match the -25% inset on .parallax-bg in global.css
-      const counterFactor = 0.5; // 0 = scrolls with content, 1 = fully anchored to viewport (like the old fixed background)
+      const bufferRatio = 0.35; // must match the -35% inset on .parallax-bg in global.css
+      const counterFactor = 0.7; // 0 = scrolls with content, 1 = fully anchored to viewport (like the old fixed background)
       let ticking = false;
 
       function update() {
