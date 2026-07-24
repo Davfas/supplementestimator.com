@@ -72,9 +72,9 @@ const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
           <div class="testimonial-track">
             {items.map((t, i) => (
               <article
-                class="testimonial-slide bg-secondary border border-accent/15 rounded-2xl p-8 md:p-10 text-center"
+                class={`testimonial-slide bg-secondary border border-accent/15 rounded-2xl p-8 md:p-10 text-center ${i === 0 ? 'is-active' : ''}`}
                 data-slide-index={i}
-                style={i === 0 ? undefined : 'display:none'}
+                aria-hidden={i === 0 ? 'false' : 'true'}
               >
                 <span class="flex justify-center gap-0.5 text-[#FBBF24] mb-5" aria-hidden="true">
                   {[...Array(t.rating)].map(() => <i class="ti ti-star-filled"></i>)}
@@ -135,6 +135,16 @@ const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
   .testimonial-track {
     flex: 1;
     min-width: 0;
+    display: grid;
+  }
+
+  .testimonial-slide {
+    grid-area: 1 / 1;
+    visibility: hidden;
+  }
+
+  .testimonial-slide.is-active {
+    visibility: visible;
   }
 
   .testimonial-nav {
@@ -194,7 +204,9 @@ const items = limit ? allTestimonials.slice(0, limit) : allTestimonials;
     function show(index: number) {
       current = (index + slides.length) % slides.length;
       slides.forEach((slide, i) => {
-        slide.style.display = i === current ? '' : 'none';
+        const active = i === current;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', String(!active));
       });
       dots.forEach((dot, i) => {
         const active = i === current;
