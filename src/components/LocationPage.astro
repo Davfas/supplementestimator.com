@@ -9,9 +9,10 @@ interface Props {
   blurb: string;
   image?: string;
   regionalNote?: string;
+  codeNote?: string;
 }
 
-const { state, stateAbbr, blurb, image, regionalNote } = Astro.props;
+const { state, stateAbbr, blurb, image, regionalNote, codeNote } = Astro.props;
 
 const title = `Supplement Estimating in ${state} | Precision Estimating`;
 const description = `Precision Estimating serves roofing contractors, GCs, and restoration companies in ${state}. Xactimate estimates, supplement writing, and carrier negotiations — nationwide remote service.`;
@@ -190,6 +191,14 @@ const services = [
       {regionalNote && (
         <p class="text-slate-300 text-lg leading-relaxed mb-8">
           {regionalNote}
+        </p>
+      )}
+      {codeNote && (
+        <p class="text-slate-300 text-lg leading-relaxed mb-8 text-left bg-primary border border-accent/15 rounded-xl p-6">
+          <span class="text-accent-teal font-heading font-semibold block mb-2">
+            <i class="ti ti-clipboard-check"></i> {state} Code & Compliance
+          </span>
+          {codeNote}
         </p>
       )}
       <p class="text-slate-300 text-lg leading-relaxed mb-8">
