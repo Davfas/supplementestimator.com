@@ -100,16 +100,19 @@ const services = [
         : `background-color: #0C1926;`}
     ></div>
 
-    <div class="relative z-10 mx-4 md:mx-auto max-w-2xl w-full text-center px-10 py-14 rounded-2xl"
-      style="background: rgba(12, 25, 38, 0.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1);">
+    <!-- Soft radial vignette behind the text only, instead of a solid card — keeps the
+         photo visible everywhere else. Text relies on drop-shadow for contrast instead. -->
+    <div class="absolute inset-0 z-[5] pointer-events-none" style="background: radial-gradient(ellipse 60% 55% at center, rgba(12,25,38,0.72) 0%, rgba(12,25,38,0.4) 45%, rgba(12,25,38,0) 75%);"></div>
+
+    <div class="relative z-10 mx-4 md:mx-auto max-w-2xl w-full text-center px-6 py-10">
 
       <div class="inline-flex items-center gap-2 bg-surface border border-accent/20 rounded-full px-4 py-1.5 text-accent text-sm font-medium mb-6">
         <i class="ti ti-map-pin"></i> Serving {state} Contractors
       </div>
-      <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4 leading-tight" style="text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 8px 30px rgba(0,0,0,0.7);">
         Insurance Supplement Estimating<br class="hidden md:block" /> in {state}
       </h1>
-      <p class="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+      <p class="text-slate-100 text-lg md:text-xl max-w-2xl mx-auto mb-8" style="text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 4px 16px rgba(0,0,0,0.6);">
         {blurb}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
