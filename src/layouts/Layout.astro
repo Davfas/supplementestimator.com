@@ -65,13 +65,16 @@ const {
       }, { rootMargin: '35% 0px 35% 0px' });
       bgs.forEach((el) => io.observe(el));
 
-      const bufferRatio = 0.35; // must match the -35% inset on .parallax-bg in global.css
+      const defaultBufferRatio = 0.35; // must match the -35% inset on .parallax-bg in global.css
       const counterFactor = 0.7; // 0 = scrolls with content, 1 = fully anchored to viewport (like the old fixed background). Lower = cheaper to composite.
       let ticking = false;
 
       function update() {
         ticking = false;
         visible.forEach((el) => {
+          // Elements using the .parallax-bg--photo variant carry their own smaller
+          // buffer via data-buffer, matching that class's -8% inset in global.css.
+          const bufferRatio = el.dataset.buffer ? parseFloat(el.dataset.buffer) : defaultBufferRatio;
           const parent = el.parentElement as HTMLElement;
           const rect = parent.getBoundingClientRect();
           const maxShift = rect.height * bufferRatio;

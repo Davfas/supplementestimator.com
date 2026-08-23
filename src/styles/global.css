@@ -39,6 +39,17 @@ html {
   will-change: transform;
 }
 
+/* Lighter variant for location-page landmark photos — the standard 35% buffer above
+   crops too much of a landscape photo to fill the oversized box, cutting off statues,
+   bridge towers, capitol domes, etc. A smaller buffer means less forced zoom, and
+   anchoring to the top keeps the crop (when it happens) on the ground/foreground
+   instead of the landmark. Pair with data-buffer="0.08" on the element so the JS
+   scroll offset matches this smaller box. */
+.parallax-bg--photo {
+  inset: -8% 0;
+  background-position: top center;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
 }
